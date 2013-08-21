@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Paydm::Application.config.secret_key_base = 'e0e79f6bf68bbe97ab9990d2715ad9bfa58b89c42470885cf5e157545aa64e5c0ec4864d6265dd59134cb36813dc1efcddac9dfd5d99b9a7a884fd3827631fb4'
+Paydm::Application.config.secret_key_base = '198b2a8ab910a4a87ec1757613ce09b60437ad0b48dd11ad7d81e59b3a0d6dc59738ed43cf327c9c228472d84d17021789e6379101a890c66f92e9882e3fe95d'
