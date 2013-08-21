@@ -1,1 +1,126 @@
-ok
+
+
+
+  <!-- Main Page Content and Sidebar -->
+
+  <div class="row">
+
+    <!-- Main Content -->
+    <div class="large-12 columns" role="content">
+
+		<form class="custom">
+		  <fieldset>
+		    <legend>Escolha a operação desejada</legend>
+			<div class="row">
+				<div class="large-6 columns">
+			      <label for="type">Você é?</label>
+			      <select id="type" class="medium" name="type">
+			        <option value="demolay" SELECTED>DeMolay</option>
+			        <option value="capitulo-convento">Capítulo / Convento</option>
+			      </select>
+			    </div>
+				<div class="large-6 columns demolay hidden">
+			      <label for="operation-demolay">Você deseja pagar:</label>
+			      <select id="operation-demolay" class="medium" name="operation-demolay">
+			      	  <option value="elevacao">Elevação ao Grau DeMolay</option>
+			          <option value="renovacao-cid">Renovação de CID</option>
+			          <option value="renovacao-cid-senior">Renovação de CID Sênior</option>
+			          <option value="renovacao-cid-vitalicio">Renovação de CID Vitalício</option>
+			          <option value="formulario-conselho">Formulário de Conselho Consultivo</option>
+			          <option value="grau-cavaleiro">Grau de Cavaleiro</option>
+			          <option value="regularizacao-cadastral">Regularização Cadastral</option>
+			          <option value="requisicao-carta">Requisição de Carta Constitutiva</option>
+			          <option value="segunda-via">2ª Via de Documentos</option>
+			      </select>
+			    </div>
+			    <div class="large-6 columns capitulo-convento hidden">
+			      <label for="operation-capitulo-convento">Capítulo ou Convento desejo pagar:</label>
+			      <select id="operation-capitulo-convento" class="medium" name="operation-capitulo-convento">
+			      	  <option>Iniciação</option>
+			      	  <option>Elevação ao Grau DeMolay</option>
+			      	  <option>Renovação de CID</option>
+			      	  <option>Renovação de CID Sênior</option>
+			      	  <option>Renovação de CID Vitalício</option>
+			      	  <option>Formulário de Conselho Consultivo</option>
+			      	  <option>Grau de Cavaleiro</option>
+			      	  <option>Regularização Cadastral</option>
+			      	  <option>Requisição de Carta Constitutiva</option>
+			      	  <option>2ª Via de Documentos</option>
+			      </select>
+			    </div>
+			    
+			</div>
+		    <div class="row">
+		      <div class="large-4 columns">
+		        <label>Nome</label>
+		        <input type="text" placeholder="Fulano José" required>
+		      </div>
+		      <div class="large-4 columns">
+		        <label>CPF</label>
+		        <input type="text" placeholder="006.747.444-90" required>
+		      </div>
+		      <div class="large-4 columns">
+		        <label>CID</label>
+		        <input type="text" placeholder="53433" required>
+		      </div>
+		    </div>
+
+		    <div class="row">
+		      <div class="large-6 columns">
+		        <label>Endereço</label>
+		        <input type="text" placeholder="Avenida, Rua, Número, Bairro, Próximo de:, Cidade">
+		      </div>
+		      <div class="large-6 columns">
+		        <label>E-mail</label>
+		        <input type="email" placeholder="fulano@gmail.com" required>
+		      </div>
+		    </div>
+		    <div class="row sub-attributes">
+		     <div class="large-4 columns data_elevacao hidden">
+		        <label>Data de elevação</label>
+		        <input type="date" name="elevacao" id="elevacao" placeholder="19/08/1990">
+		      </div>
+		      <div class="large-4 columns capitulo hidden">
+		        <label>Capítulo</label>
+		        <input type="text" name="capitulo" id="capitulo" placeholder="Cap. Cavaleiros da Távula">
+		      </div>
+		      <div class="large-4 columns data_investidura hidden">
+		        <label>Data de investidura</label>
+		        <input type="date" name="investido" id="investido" placeholder="19/08/1990">
+		      </div>
+		      <div class="large-4 columns convento hidden">
+		        <label>Convento</label>
+		        <input type="text" name="convento" id="convento" placeholder="Conv. Cavaleiros da Távula">
+		      </div>
+		      <div class="large-4 columns data_nascimento hidden">
+		        <label>Data de nascimento</label>
+		        <input type="date" name="nascimento" id="nascimento" placeholder="19/08/1990">
+		      </div>
+		      <div class="large-4 columns data_regularizacao hidden">
+		        <label>Data de regularização</label>
+		        <input type="date" name="regularizacao" id="regularizacao" placeholder="19/08/1990">
+		      </div>
+		      <div class="large-4 columns nome_organizacao_filiada hidden">
+		        <label>Nome da organização filiada</label>
+		        <input type="text" name="organizacao-filiada" id="organizacao-filiada" placeholder="">
+		      </div>
+		      <div class="large-4 columns tipo_documento hidden">
+		        <label>Tipo de documento</label>
+		        <input type="text" name="documento" id="documento" placeholder="">
+		      </div>
+		    </div>
+
+		  </fieldset>
+		</form>
+
+     
+
+    </div>
+
+    <!-- End Main Content -->
+
+  </div>
+
+  <!-- End Main Content and Sidebar -->
+
+
