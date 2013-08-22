@@ -4,7 +4,11 @@ Paydm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  
+  resources :orders
 
+  get 'checkout/confirmation', to: 'checkout#confirmation', as: 'confirmation'
+  post 'notifications/pagseguro', to: 'notifications#create', as: 'notifications'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

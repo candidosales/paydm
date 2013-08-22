@@ -1,26 +1,26 @@
 var Payment  = (function () {
 
 	var operationDemolay = [
-						{type: 'elevacao', value:90, attributes:['data_elevacao']}, 
-						{type: 'renovacao-cid', value:0, attributes:['capitulo']},  
-						{type: 'renovacao-cid-senior', value:0, attributes:['capitulo']},
-						{type: 'renovacao-cid-vitalicio', value:0, attributes:['capitulo']},
-						{type: 'formulario-conselho', value:0, attributes:['capitulo']},
-						{type: 'grau-cavaleiro', value:0, attributes:['data_investidura','convento']},
-						{type: 'regularizacao-cadastral', value:0, attributes:['data_nascimento','data_regularizacao']},
-						{type: 'requisicao-carta', value:0, attributes:['nome_organizacao_filiada']},
-						{type: 'segunda-via', value:0, attributes:['tipo_documento']},
+						{type: 'elevacao', price:90, attributes:['data_elevacao']}, 
+						{type: 'renovacao_cid', price:0, attributes:['capitulo']},  
+						{type: 'renovacao_cid_senior', price:0, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:0, attributes:['capitulo']},
+						{type: 'formulario_conselho', price:0, attributes:['capitulo']},
+						{type: 'grau_cavaleiro', price:0, attributes:['data_investidura','convento']},
+						{type: 'regularizacao_cadastral', price:0, attributes:['data_nascimento','data_regularizacao']},
+						{type: 'requisicao_carta', price:0, attributes:['nome_organizacao_filiada']},
+						{type: 'segunda_via', price:0, attributes:['tipo_documento']},
 	];
 
 	var operationCapituloConvento = null;
 
 	function verifySelected(){
-		if($('#type').val()=='demolay'){
+		if($('#order_tipo').val()=='demolay'){
 			$('.demolay').removeClass('hidden');
-			$('.capitulo-convento').addClass('hidden');
+			$('.capitulo_convento').addClass('hidden');
 		}else{
 			$('.demolay').addClass('hidden');
-			$('.capitulo-convento').removeClass('hidden');
+			$('.capitulo_convento').removeClass('hidden');
 		}
 	}
 
@@ -35,7 +35,7 @@ var Payment  = (function () {
 		if(operation){
 		operation.forEach(function(obj){
 			console.log('itera');
-			if(obj.type == $('#operation-'+value).val()){
+			if(obj.type == $('#operation_'+value).val()){
 				console.log('igual');
 				$('.sub-attributes').children('.columns').addClass('hidden');
 				obj.attributes.forEach(function(obj){
@@ -53,10 +53,12 @@ var Payment  = (function () {
 	    }
 }());	
 
-Payment.verifySelected();
-Payment.showAttribute($('#type').val());
+var orderType = $('#order_tipo');
 
-$('#type').change(function(){
+Payment.verifySelected();
+Payment.showAttribute(orderType.val());
+
+orderType.change(function(){
 	var val = $(this).val();
 	console.log('type: '+val);
 	Payment.verifySelected();
@@ -64,5 +66,6 @@ $('#type').change(function(){
 });
 
 $('select[id*="operation"]').change(function(){
-	Payment.showAttribute($('#type').val());
+	Payment.showAttribute(orderType.val());
+	$('#order_operation').val($(this).val());
 });

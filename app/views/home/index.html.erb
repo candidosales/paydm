@@ -1,6 +1,3 @@
-
-
-
   <!-- Main Page Content and Sidebar -->
 
   <div class="row">
@@ -8,34 +5,43 @@
     <!-- Main Content -->
     <div class="large-12 columns" role="content">
 
-		<form class="custom">
+		<%= form_for @order, html: { class: "custom" } do |f| %>
+          <% if @order.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@order.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+              <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
 		  <fieldset>
 		    <legend>Escolha a operação desejada</legend>
 			<div class="row">
 				<div class="large-6 columns">
 			      <label for="type">Você é?</label>
-			      <select id="type" class="medium" name="type">
-			        <option value="demolay" SELECTED>DeMolay</option>
-			        <option value="capitulo-convento">Capítulo / Convento</option>
-			      </select>
+			      <%= f.select :tipo, [[ "DeMolay", "demolay" ],[ "Capítulo / Convento", "capitulo_convento" ]] %>
 			    </div>
 				<div class="large-6 columns demolay hidden">
-			      <label for="operation-demolay">Você deseja pagar:</label>
-			      <select id="operation-demolay" class="medium" name="operation-demolay">
+			      <label for="operation_demolay">Você deseja pagar:</label>
+			      <select id="operation_demolay" class="medium" name="operation_demolay">
 			      	  <option value="elevacao">Elevação ao Grau DeMolay</option>
-			          <option value="renovacao-cid">Renovação de CID</option>
-			          <option value="renovacao-cid-senior">Renovação de CID Sênior</option>
-			          <option value="renovacao-cid-vitalicio">Renovação de CID Vitalício</option>
-			          <option value="formulario-conselho">Formulário de Conselho Consultivo</option>
-			          <option value="grau-cavaleiro">Grau de Cavaleiro</option>
-			          <option value="regularizacao-cadastral">Regularização Cadastral</option>
-			          <option value="requisicao-carta">Requisição de Carta Constitutiva</option>
-			          <option value="segunda-via">2ª Via de Documentos</option>
+			          <option value="renovacao_cid">Renovação de CID</option>
+			          <option value="renovacao_cid_senior">Renovação de CID Sênior</option>
+			          <option value="renovacao_cid_vitalicio">Renovação de CID Vitalício</option>
+			          <option value="formulario_conselho">Formulário de Conselho Consultivo</option>
+			          <option value="grau_cavaleiro">Grau de Cavaleiro</option>
+			          <option value="regularizacao_cadastral">Regularização Cadastral</option>
+			          <option value="requisicao_carta">Requisição de Carta Constitutiva</option>
+			          <option value="segunda_via">2ª Via de Documentos</option>
 			      </select>
 			    </div>
-			    <div class="large-6 columns capitulo-convento hidden">
-			      <label for="operation-capitulo-convento">Capítulo ou Convento desejo pagar:</label>
-			      <select id="operation-capitulo-convento" class="medium" name="operation-capitulo-convento">
+			    <div class="large-6 columns capitulo_convento hidden">
+			      <label for="operation_capitulo_convento">Capítulo ou Convento desejo pagar:</label>
+			      <select id="operation_capitulo_convento" class="medium" name="operation_capitulo_convento">
 			      	  <option>Iniciação</option>
 			      	  <option>Elevação ao Grau DeMolay</option>
 			      	  <option>Renovação de CID</option>
@@ -48,31 +54,32 @@
 			      	  <option>2ª Via de Documentos</option>
 			      </select>
 			    </div>
-			    
+			    <%= f.hidden_field :operation, required: true %>
+			    <%= f.hidden_field :status, value: 1 %>
 			</div>
 		    <div class="row">
 		      <div class="large-4 columns">
 		        <label>Nome</label>
-		        <input type="text" placeholder="Fulano José" required>
+		        <%= f.text_field :name, placeholder: "José Francisco", required: true, value: "Candido" %>
 		      </div>
 		      <div class="large-4 columns">
 		        <label>CPF</label>
-		        <input type="text" placeholder="006.747.444-90" required>
+		        <%= f.text_field :cpf, placeholder: "008.998.998-34", required: true, value: "006.744.443-89" %>
 		      </div>
 		      <div class="large-4 columns">
 		        <label>CID</label>
-		        <input type="text" placeholder="53433" required>
+		        <%= f.text_field :cid, placeholder: "54545", required: true, value: "67678" %>
 		      </div>
 		    </div>
 
 		    <div class="row">
 		      <div class="large-6 columns">
 		        <label>Endereço</label>
-		        <input type="text" placeholder="Avenida, Rua, Número, Bairro, Próximo de:, Cidade">
+		        <%= f.text_field :address, placeholder: "Avenida, Rua, Número, Bairro, Complemento e Cidade", required: true, value: "Okok" %>
 		      </div>
 		      <div class="large-6 columns">
 		        <label>E-mail</label>
-		        <input type="email" placeholder="fulano@gmail.com" required>
+		        <%= f.email_field :email, placeholder: "voce@email.com", required: true, value:"candidosg@gmail.com" %>
 		      </div>
 		    </div>
 		    <div class="row sub-attributes">
@@ -115,7 +122,7 @@
 				</div>
 			</div>
 		  </fieldset>
-		</form>
+	<% end %>
 
      
 

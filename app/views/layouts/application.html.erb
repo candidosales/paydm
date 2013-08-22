@@ -22,7 +22,12 @@
 
   <body>
   <!-- Nav Bar -->
-
+  <% if notice %>     
+      <div data-alert class="alert-box success">
+        <p id="notice"><%= notice %></p>
+        <a href="#" class="close">&times;</a>
+      </div>
+    <% end %>
   <div class="row">
     <div class="large-12 columns">
       <!--
