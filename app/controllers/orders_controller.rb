@@ -3,22 +3,23 @@ class OrdersController < ApplicationController
   	@order = Order.new(order_params)
     @order.save
   	p @order.id
+    p @order.description
 
-  	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
+  	redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
 
     payment = PagSeguro::PaymentRequest.new
-    payment.reference = order.id
+    payment.reference = @order.id
     payment.notification_url = notifications_url
     payment.redirect_url = processing_url
 
-    order.products.each do |product|
+    #@order.products.each do |product|
       payment.items << {
-        id: product.id,
-        description: product.title,
-        amount: product.price,
-        weight: product.weight
+        id: @order.id,
+        description: @order.description,
+        amount: @order.price,
+        weight: 1
       }
-    end
+    #end
 
     response = payment.register
 

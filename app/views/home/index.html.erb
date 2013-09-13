@@ -22,11 +22,11 @@
 		    <legend>Escolha a operação desejada</legend>
 			<div class="row">
 				<div class="large-6 columns">
-			      <label for="type">Você é?</label>
+			      <label for="type">Eu sou...</label>
 			      <%= f.select :tipo, [[ "DeMolay", "demolay" ],[ "Capítulo / Convento", "capitulo_convento" ]] %>
 			    </div>
-				<div class="large-6 columns demolay hidden">
-			      <label for="operation_demolay">Você deseja pagar:</label>
+				<div class="large-4 columns demolay hidden">
+			      <label for="operation_demolay">Desejo pagar:</label>
 			      <select id="operation_demolay" class="medium" name="operation_demolay">
 			      	  <option value="elevacao">Elevação ao Grau DeMolay</option>
 			          <option value="renovacao_cid">Renovação de CID</option>
@@ -39,7 +39,7 @@
 			          <option value="segunda_via">2ª Via de Documentos</option>
 			      </select>
 			    </div>
-			    <div class="large-6 columns capitulo_convento hidden">
+			    <div class="large-4 columns capitulo_convento hidden">
 			      <label for="operation_capitulo_convento">Capítulo ou Convento desejo pagar:</label>
 			      <select id="operation_capitulo_convento" class="medium" name="operation_capitulo_convento">
 			      	  <option>Iniciação</option>
@@ -54,8 +54,13 @@
 			      	  <option>2ª Via de Documentos</option>
 			      </select>
 			    </div>
+			    <div class="large-2 columns price">
+			    	<label for="price">Valor da taxa:</label>
+			    	<h4></h4>
+			    </div>
 			    <%= f.hidden_field :operation, required: true %>
 			    <%= f.hidden_field :status, value: 1 %>
+			    <%= f.hidden_field :price, value: 1 %>
 			</div>
 		    <div class="row">
 		      <div class="large-4 columns">

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130822192519) do
     t.string   "cid"
     t.string   "address"
     t.string   "email"
+    t.float    "price"
     t.date     "data_elevacao"
     t.date     "data_investidura"
     t.date     "data_nascimento"
