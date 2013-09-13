@@ -9,6 +9,7 @@ Paydm::Application.routes.draw do
 
   get 'checkout/confirmation', to: 'checkout#confirmation', as: 'confirmation'
   post 'notifications/pagseguro', to: 'notifications#create', as: 'notifications'
+  get 'home/obrigado', to: 'home#thank_you', as: 'thanks'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

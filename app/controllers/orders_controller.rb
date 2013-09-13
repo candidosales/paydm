@@ -5,12 +5,12 @@ class OrdersController < ApplicationController
   	p @order.id
     p @order.description
 
-  	redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
+  	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
 
     payment = PagSeguro::PaymentRequest.new
     payment.reference = @order.id
     payment.notification_url = notifications_url
-    payment.redirect_url = processing_url
+    payment.redirect_url = thanks_url
 
     #@order.products.each do |product|
       payment.items << {
