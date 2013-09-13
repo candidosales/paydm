@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     @order.save
   	p @order.id
 
-  	redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
+  	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
 
     payment = PagSeguro::PaymentRequest.new
     payment.reference = order.id
