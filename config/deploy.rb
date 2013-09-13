@@ -205,4 +205,10 @@ namespace :nginx do
 	end
 end
 
+namespace :db do
+	task :new, :roles => :app do
+		run "cd #{current} && RAILS_ENV=production && GEM_HOME=/opt/local/ruby/gems && bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate"
+	end
+
+end
 after "deploy", "deploy:cleanup" 
