@@ -10,6 +10,7 @@ class CreateOrder < ActiveRecord::Migration
       t.string :email
       t.float :price
 
+      t.date :data_iniciacao
       t.date :data_elevacao
       t.date :data_investidura
       t.date :data_nascimento

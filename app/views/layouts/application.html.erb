@@ -13,7 +13,8 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Gerenciador de Pagamentos - GCE-PI" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gerenciador de Pagamentos - GCE-PI" %>">
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -40,7 +41,6 @@
         </ul>
       </div>-->
       <h1>GCE-PI <small>Sempre facilitando</small></h1>
-      <hr />
     </div>
   </div>
 
@@ -60,7 +60,7 @@
       <hr />
       <div class="row">
         <div class="large-6 columns">
-          <p>&copy; GCE-PI. Desenvolvido por <a href="http://candidosg.me" target="_blank">Cândido Sales</a></p>
+          <p>&copy; GCE-PI. Desenvolvido por <a href="http://about.me/candidosales" target="_blank">Cândido Sales</a></p>
         </div>
         <!--
         <div class="large-6 columns">

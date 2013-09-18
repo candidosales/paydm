@@ -2,14 +2,15 @@ var Payment  = (function () {
 
 	var operation = null;
 	var operationDemolay = [
-						{type: 'elevacao', price:90, attributes:['data_elevacao']}, 
-						{type: 'renovacao_cid', price:10, attributes:['capitulo']},  
-						{type: 'renovacao_cid_senior', price:10, attributes:['capitulo']},
-						{type: 'renovacao_cid_vitalicio', price:10, attributes:['capitulo']},
-						{type: 'formulario_conselho', price:10, attributes:['capitulo']},
-						{type: 'grau_cavaleiro', price:10, attributes:['data_investidura','convento']},
-						{type: 'regularizacao_cadastral', price:10, attributes:['data_nascimento','data_regularizacao']},
-						{type: 'requisicao_carta', price:10, attributes:['nome_organizacao_filiada']},
+						{type: 'iniciacao', price:110, attributes:['data_iniciacao']},
+						{type: 'elevacao', price:70, attributes:['data_elevacao']}, 
+						{type: 'renovacao_cid', price:65, attributes:['capitulo']},  
+						{type: 'renovacao_cid_senior', price:75, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:650, attributes:['capitulo']},
+						{type: 'formulario_conselho', price:75, attributes:['capitulo']},
+						{type: 'grau_cavaleiro', price:60, attributes:['data_investidura','convento']},
+						{type: 'regularizacao_cadastral', price:100, attributes:['data_nascimento','data_regularizacao']},
+						{type: 'requisicao_carta', price:30, attributes:['nome_organizacao_filiada']},
 						{type: 'segunda_via', price:10, attributes:['tipo_documento']},
 	];
 
@@ -32,18 +33,22 @@ var Payment  = (function () {
 	function showAttribute(value){
 		console.log('val: '+value);
 		if(operation){
-		operation.forEach(function(obj){
-			console.log('itera');
-			if(obj.type == $('#operation_'+value).val()){
-				console.log('igual');
-				$('.sub-attributes').children('.columns').addClass('hidden');
-				obj.attributes.forEach(function(obj){
-					$('.'+obj).removeClass('hidden');
-				});
-			}
-		});
+			var result = $('#operation_'+value).val();
+			$.each(operation, function(i, obj) {
+				console.log('go');
+				if(obj.type == result){
+					console.log('igual');
+					$('.sub-attributes').children('.columns').addClass('hidden');
+					obj.attributes.forEach(function(obj){
+						$('.'+obj).removeClass('hidden');
+					});
+					return false;
+				}
+			});
+			setOrderOperation(result);		
+			console.log('result: '+result);
+			showPrice(result);
 		}
-
 	}
 
 	function showPrice(value){
@@ -60,11 +65,17 @@ var Payment  = (function () {
 		return operation;
 	}
 
+	function setOrderOperation(value){
+		console.log('order_operation: '+value);
+		$('#order_operation').val(value);	
+	}
+
 	return {
 	      verifySelected:verifySelected,
 	      showAttribute:showAttribute,
 	      showPrice:showPrice,
-	      getOperation:getOperation
+	      getOperation:getOperation,
+	      setOrderOperation:setOrderOperation
 	    }
 }());	
 
@@ -83,5 +94,6 @@ orderType.change(function(){
 $('select[id*="operation"]').change(function(){
 	Payment.showAttribute(orderType.val());
 	Payment.showPrice($(this).val());
-	$('#order_operation').val($(this).val());
 });
+
+$("#order_cpf").mask("999.999.999-99");

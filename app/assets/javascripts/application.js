@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require jquery.maskedinput.min
 //= require core/app.js
 
 $(function(){ $(document).foundation(); });
