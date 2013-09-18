@@ -18,9 +18,15 @@ class OrdersController < ApplicationController
         description: @order.description,
         amount: @order.price,
         weight: 1
+        
       }
     #end
-
+      payment.sender << {
+        email: @order.email
+        name:  @order.name
+        cpf: @order.cpf
+      }
+      
     response = payment.register
 
     # Caso o processo de checkout tenha dado errado, lança uma exceção.
