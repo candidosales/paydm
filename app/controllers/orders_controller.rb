@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       payment.sender = {
        email: @order.email,
        name: @order.name,
-       cpf: @order.cpf 
+       cpf: @order.cpf.gsub(/./,''); 
       }
       
 
