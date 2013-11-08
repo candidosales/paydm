@@ -77,4 +77,20 @@ Paydm::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+  :address              => "email-smtp.us-east-1.amazonaws.com",
+  :port                 => 587,
+  :user_name            => 'AKIAIPZU3CJSSHEXJGNA',
+  :password             => 'Ak35CYsVsZRNtixvEMgQV6O1BOUVijgfxSreyu2yWoQB',
+  :authentication       => :login,
+  :enable_starttls_auto => true  }
+  config.action_mailer.asset_host = "http://54.232.210.178"
 end

@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Gerenciador de Pagamentos - GCE-PI" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Administrador - GCE-PI" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gerenciador de Pagamentos - GCE-PI" %>">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   	<%= stylesheet_link_tag    "application" %>
@@ -21,7 +21,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+  <body class="admin">
   <!-- Nav Bar -->
   <% if notice %>     
       <div data-alert class="alert-box success">
@@ -37,13 +37,14 @@
   <% end %>
   <div class="row">
       <div class="large-8 columns">
-        <h1>GCE-PI <small>Sempre facilitando</small></h1>
+        <h1>Administrador</h1>
       </div>
       
       <div class="large-4 columns">
-        <%= render 'shared/profile' %>
+         <%= render 'shared/profile' %>
       </div>
   </div>
+
   <!-- End Nav -->
   <!-- Main Page Content and Sidebar -->
 

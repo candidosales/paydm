@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require foundation 
- *= require_self
- *= require foundation_and_overrides
- *= require_tree .
  */
+
+@import "bourbon";
+
+@import "core/base";
+@import "core/app";
+@import "core/responsive";

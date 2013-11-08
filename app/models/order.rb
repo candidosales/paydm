@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
 	 include ActionView::Helpers::NumberHelper
 
+	 monetize :price
 	 validates :tipo, :operation, :price, :name, :cpf, :cid, :address, :email, presence: true
 
 	 def description

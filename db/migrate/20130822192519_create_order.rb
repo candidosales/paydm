@@ -8,7 +8,8 @@ class CreateOrder < ActiveRecord::Migration
       t.string :cid
       t.string :address
       t.string :email
-      t.float :price
+
+      t.decimal :price
 
       t.date :data_iniciacao
       t.date :data_elevacao

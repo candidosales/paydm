@@ -1,4 +1,5 @@
 Paydm::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +11,12 @@ Paydm::Application.routes.draw do
   get 'checkout/confirmation', to: 'checkout#confirmation', as: 'confirmation'
   post 'notifications/pagseguro', to: 'notifications#create', as: 'notifications'
   get 'home/obrigado', to: 'home#thank_you', as: 'thanks'
+
+  namespace :admin do
+     root to: "dashboard#index"
+
+     resources :orders
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

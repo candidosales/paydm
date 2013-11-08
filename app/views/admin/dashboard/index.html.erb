@@ -1,0 +1,24 @@
+<h2>Painel</h2>
+<h3>Listagem  de <%= @orders.count %> pagamento(s)</h3>
+<hr/>
+<table>
+  <thead>
+    <tr>
+      <th width="200">Tipo</th>
+      <th width="150">Devedor</th>
+      <th width="150">Endereço</th>
+      <th width="150">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @orders.each do |o| %>
+    <tr>
+      <td><h5><%= o.tipo.capitalize %></br><small><%= o.operation.capitalize %></small></h5></td>
+      <td><h5><%= o.name %> <%= o.cid %></br><small><%=o.email%></small></br><small><%=o.cpf%></small></h5>
+      </td>
+      <td><h5><%= o.address %></h5></td>
+      <td><h4><%= humanized_money_with_symbol o.price %></h4></td>
+    </tr>
+	<% end %>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+		<% if user_signed_in? %>
+        	<p>Logado como <strong><%= current_user.email %></strong></br>
+            <%= link_to 'Editar perfil', edit_user_registration_path, :class => '' %> |
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => ''  %>
+        	</p>
+          <% else %>
+            <%= link_to "Cadastra-se", new_user_registration_path, :class => ''  %> |
+            <%= link_to "Login", new_user_session_path, :class => ''  %>
+        <% end %>
