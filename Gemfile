@@ -6,8 +6,6 @@ gem 'rails-i18n'
 
 gem 'pagseguro-oficial', git: 'git://github.com/pagseguro/ruby.git'
 
-gem 'sidekiq'
-
 # Use postgresql as the database for Active Record
 gem 'pg'
 
@@ -57,7 +55,7 @@ group :development do
   gem 'pry-meta'
   gem 'thin'
   gem 'foreman'
-  gem 'capistrano'
+  gem 'capistrano','~> 2.15.4'
 end
 
 # Use unicorn as the app server
