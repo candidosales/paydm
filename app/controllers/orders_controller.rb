@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
     @order.save
   	p @order.id
     p @order.description
+    p @order.cpf
 
   	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido." 
 
@@ -24,10 +25,8 @@ class OrdersController < ApplicationController
       payment.sender = {
        email: @order.email,
        name: @order.name,
-       cpf: @order.cpf.gsub(/./,''); 
-      }
-      
-
+       cpf: @order.cpf.gsub(/[.-]/,'')  
+      }   
     response = payment.register
 
     # Caso o processo de checkout tenha dado errado, lança uma exceção.
