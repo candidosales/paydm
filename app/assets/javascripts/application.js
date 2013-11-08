@@ -16,5 +16,7 @@
 //= require foundation
 //= require jquery.maskedinput.min
 //= require core/app.js
+//= require jquery.dataTables
+//= require ./admin/admin
 
 $(function(){ $(document).foundation(); });

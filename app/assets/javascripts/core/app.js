@@ -31,7 +31,7 @@ var Payment  = (function () {
 	}
 
 	function showAttribute(value){
-		console.log('val: '+value);
+		//console.log('val: '+value);
 		if(operation){
 			var result = $('#operation_'+value).val();
 			$.each(operation, function(i, obj) {
