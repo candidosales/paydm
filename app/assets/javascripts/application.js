@@ -15,8 +15,9 @@
 //= require turbolinks
 //= require foundation
 //= require jquery.maskedinput.min
-//= require core/app
 //= require jquery.dataTables
-//= require admin/admin
+//= require core/app
+//= require core/admin
+
 
 $(function(){ $(document).foundation(); });
