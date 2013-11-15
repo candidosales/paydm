@@ -23,59 +23,73 @@
 
   <body class="admin">
   <!-- Nav Bar -->
-  <% if notice %>     
-      <div data-alert class="alert-box success">
-        <p id="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <a href="#" class="close">&times;</a>
-      </div>
-  <% elsif alert %>     
-      <div data-alert class="alert-box alert">
-        <p id="alert"><%= alert %></p>
-        <a href="#" class="close">&times;</a>
-      </div>
-  <% end %>
-  <div class="row">
-      <div class="large-8 columns">
-        <h1>Administrador</h1>
-      </div>
-      
-      <div class="large-4 columns">
-         <%= render 'shared/profile' %>
-      </div>
-  </div>
-
-  <!-- End Nav -->
-  <!-- Main Page Content and Sidebar -->
-
-  <div class="row">
-    <!-- Main Content -->
-    <div class="large-12 columns" role="content">
-    <%= yield %>
-    </div>
-  </div>
-      <!-- Footer -->
-
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-6 columns">
-          <p>&copy; GCE-PI. Desenvolvido por <a href="http://about.me/candidosales" target="_blank">Cândido Sales</a></p>
-        </div>
-        <!--
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      -->
+  <div class="row-fluid">
+    <div class="large-1 columns sidebar">
+      <ul>
+        <li>
+          <%= image_tag avatar_url(current_user) %>
+        </li>
+      </ul>
+      <div class="bottom-anchored">
+        <ul>
+          <li>
+            <%= link_to "", destroy_user_session_path, method: :delete, :class => 'icon-exit'  %>
+          </li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="large-11 columns">
+      <% if notice %>     
+          <div data-alert class="alert-box success">
+            <p id="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+            <a href="#" class="close">&times;</a>
+          </div>
+      <% elsif alert %>     
+          <div data-alert class="alert-box alert">
+            <p id="alert"><%= alert %></p>
+            <a href="#" class="close">&times;</a>
+          </div>
+      <% end %>
+      <div class="row-fluid">
+          <div class="large-8 columns">
+            <h1><a href="/">Administrador</a></h1>
+          </div>
+      </div>
+
+      <!-- End Nav -->
+      <!-- Main Page Content and Sidebar -->
+
+      <div class="row-fluid">
+        <!-- Main Content -->
+        <div class="large-12 columns" role="content">
+        <%= yield %>
+        </div>
+      </div>
+          <!-- Footer -->
+
+      <footer class="row-fluid">
+        <div class="large-12 columns">
+          <hr />
+          <div class="row-fluid">
+            <div class="large-6 columns">
+              <p>&copy; GCE-PI. Desenvolvido por <a href="http://about.me/candidosales" target="_blank">Cândido Sales</a></p>
+            </div>
+            <!--
+            <div class="large-6 columns">
+              <ul class="inline-list right">
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+              </ul>
+            </div>
+          -->
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

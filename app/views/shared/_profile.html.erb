@@ -1,9 +1,19 @@
 		<% if user_signed_in? %>
-        	<p>Logado como <strong><%= current_user.email %></strong></br>
-            <%= link_to 'Editar perfil', edit_user_registration_path, :class => '' %> |
-            <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => ''  %>
-        	</p>
+			 <li class="divider hide-for-small"></li>
+		      <li class="has-dropdown"><a href="#"><span class="icon-user"></span></a>
+
+		        <ul class="dropdown">
+		           <li><%= link_to 'Admin', admin_root_path, :class => 'icon-list' %></li>
+		           <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'icon-pencil' %></li>
+          	 	   <li><%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'icon-exit'  %></li>
+		        </ul>
+		      </li>
+        	
           <% else %>
-            <%= link_to "Cadastra-se", new_user_registration_path, :class => ''  %> |
-            <%= link_to "Login", new_user_session_path, :class => ''  %>
+          	<li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
+          	<li class="divider hide-for-small"></li>
+     		 <li><%= link_to "Login", new_user_session_path, :class => 'icon-enter'  %></li>
         <% end %>
+
+
+      

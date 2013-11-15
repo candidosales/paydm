@@ -1,11 +1,71 @@
-body, h1, h2, h3, h4, h5, h6, h7, p, a{
+body, h1, h2, h3, h4, h5, h6, h7, p{
 	font-family: $font-family-Montserrat;
+	color: $color-midnight;
+}
+body, fieldset legend{
+	background: $color-clouds;
 }
 
+.button{
+	text-shadow: 0 1px 0px rgba(0,0,0,0.15);
+	border-width: 1px 1px 3px !important;
+	border-style: solid;
+	border-radius: 5px;
+	@include box-shadow(none);
+}
 .hidden{
 	display:none;
 }
-
+.top-bar{
+	background: $color-pomegranate;
+	color: $color-clouds;
+}
+.top-bar-section li a:not(.button){
+	background: #a32b1e;
+}
 .admin{
 	background: $color-clouds;
+	color: $color-midnight;
+}
+
+.sidebar{
+	background: $color-midnight;
+	height: 100%;
+	position: fixed;
+	width: 100px;
+	padding: 1%;
+	ul{
+		list-style: none;
+	}
+	img{
+		border-radius: 50px; 
+	}
+	.bottom-anchored{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+	.icon{
+		display: inline-block;
+		vertical-align: middle;
+		zoom: 1;
+	}
+	a{
+		display: block;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 10px;
+		text-align: center;
+		position: relative;
+		white-space: nowrap;
+		overflow: hidden;
+		border-radius:5px;
+		@include transition-duration(0.2s);
+		color: $color-asbestos;
+		font-size: 2em;
+		&:hover{
+			color:#fff;
+		}
+	}
 }
