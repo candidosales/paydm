@@ -35,7 +35,9 @@ class OrdersController < ApplicationController
     #
     # Se estiver tudo certo, redireciona o comprador para o PagSeguro.
     if response.errors.any?
-      raise response.errors.join("\n")
+      response = Array(response.errors) 
+      redirect_to root_path, alert: "#{response.join(' - ')}" 
+      #raise response.errors.join("\n")
     else
       redirect_to response.url
     end
