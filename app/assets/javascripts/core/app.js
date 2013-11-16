@@ -73,7 +73,7 @@ var Payment  = (function () {
 			}else{
 				if(obj.type == value){
 					$('.price h4').html('R$ '+priceCapituloConvento(obj.price)+',00');
-					$('#order_price').val(obj.price)
+					$('#order_price').val(priceCapituloConvento(obj.price));
 					return false;
 				}
 			}

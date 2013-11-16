@@ -239,7 +239,7 @@ DEPENDENCIES
   pg
   pry-meta
   rails (= 4.0.1)
-  rails-i18n
+  rails-i18n (~> 4.0.0)
   rubber
   sass-rails (~> 4.0.1)
   sdoc

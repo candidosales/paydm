@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
-gem 'rails-i18n'
+gem 'rails-i18n','~> 4.0.0'
 
 gem 'pagseguro-oficial', git: 'git://github.com/pagseguro/ruby.git'
 

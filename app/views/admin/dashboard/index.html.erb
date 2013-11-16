@@ -3,20 +3,59 @@
 <table class="table">
   <thead>
     <tr>
-      <th width="200">Tipo</th>
+      <th width="200">Operação</th>
       <th width="150">Devedor</th>
       <th width="150">Endereço</th>
       <th width="150">Preço</th>
+      <th width="150">Data</th>
     </tr>
   </thead>
   <tbody>
   	<% @orders.each do |o| %>
     <tr>
-      <td><h5><%= o.tipo.capitalize %></br><small><%= o.operation.capitalize %></small></h5></td>
-      <td><h5><%= o.name %> <%= o.cid %></br><small><%=o.email%></small></br><small><%=o.cpf%></small></h5>
+      <td><p><strong><%= o.tipo.capitalize.gsub('_', '/') %></strong></br><small><%= o.operation.capitalize.gsub('_', ' ')   %></small>
+
+          <% if !o.protocolo.blank? %>
+            </br><small>Prt: <%=o.protocolo%></small>
+          <% end %>
+      </p></td>
+      <td><p><span class="icon-user"></span> <%= o.name %>
+          </br><small>CPF: <%=o.cpf%></small>
+        <% if !o.cid.blank? %>
+          </br><small>CID: <%=o.cid %></small>
+        <% end %>
+        <% if !o.email.blank? %>
+          </br><small><%=o.email %></small>
+        <% end %>
+        <% if !o.capitulo.blank? %>
+          </br><small>Cap: <%=o.capitulo %></small>
+        <% end %>
+        <% if !o.data_iniciacao.blank? %>
+          </br><small>Iniciação: <%=o.data_iniciacao.strftime("%d/%m/%y") %></small>
+        <% end %>
+        <% if !o.data_elevacao.blank? %>
+          </br><small>Elevação: <%=o.data_elevacao.strftime("%d/%m/%y") %></small>
+        <% end %>
+        <% if !o.convento.blank? %>
+          </br><small>Convento: <%=o.convento%></small>
+        <% end %>
+        <% if !o.data_investidura.blank? %>
+          </br><small>Investidura: <%=o.data_investidura.strftime("%d/%m/%y") %></small>
+        <% end %>
+          </p>
       </td>
-      <td><h5><%= o.address %></h5></td>
-      <td><h4><%= humanized_money_with_symbol o.price %></h4></td>
+      <td><p><span class="icon-location"></span><%= o.address %></p></td>
+      <td>
+        <% if o.tipo == "demolay" %>
+          <p><strong><%= humanized_money_with_symbol o.price %></strong></p>
+        <% else %>
+          <p><strong><%= humanized_money_with_symbol o.price %></strong><br/> <%= o.qtd_membro%> membro<%= o.qtd_membro > 1 ? "s":"" %></p>
+        <% end %>
+      </td>
+      <td>
+        <%= o.created_at.to_s(:long) %>
+      </td>
+        
     </tr>
 	<% end %>
   </tbody>

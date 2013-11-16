@@ -3,9 +3,9 @@
 		      <li class="has-dropdown"><a href="#"><span class="icon-user"></span></a>
 
 		        <ul class="dropdown">
-		           <li><%= link_to 'Admin', admin_root_path, :class => 'icon-list' %></li>
-		           <li><%= link_to 'Editar perfil', edit_user_registration_path, :class => 'icon-pencil' %></li>
-          	 	   <li><%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'icon-exit'  %></li>
+		           <li> <%= link_to '<span class="icon-list"></span> Admin'.html_safe, admin_root_path %></li>
+		           <li> <%= link_to '<span class="icon-pencil"></span> Editar perfil'.html_safe, edit_user_registration_path %></li>
+          	 	   <li> <%= link_to '<span class="icon-exit"></span> Sair'.html_safe, destroy_user_session_path, method: :delete %></li>
 		        </ul>
 		      </li>
         	
