@@ -1,6 +1,6 @@
 
 
-		<%= form_for @order, html: { class: "custom" } do |f| %>
+		<%= form_for @order, html: { class: "custom", data: {abide: '' }} do |f| %>
           <% if @order.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(@order.errors.count, "error") %> prohibited this book from being saved:</h2>
@@ -38,16 +38,9 @@
 			    <div class="large-4 columns capitulo_convento hidden">
 			      <label for="operation_capitulo_convento">Capítulo ou Convento desejo pagar:</label>
 			      <select id="operation_capitulo_convento" class="medium" name="operation_capitulo_convento">
-			      	  <option>Iniciação</option>
-			      	  <option>Elevação ao Grau DeMolay</option>
-			      	  <option>Renovação de CID</option>
-			      	  <option>Renovação de CID Sênior</option>
-			      	  <option>Renovação de CID Vitalício</option>
-			      	  <option>Formulário de Conselho Consultivo</option>
-			      	  <option>Grau de Cavaleiro</option>
-			      	  <option>Regularização Cadastral</option>
-			      	  <option>Requisição de Carta Constitutiva</option>
-			      	  <option>2ª Via de Documentos</option>
+			      	  <option value="iniciacao_lote">Iniciação em lote</option>
+			      	  <option value="elevacao_lote">Elevação ao Grau DeMolay em lote</option>
+			      	  <option value="grau_cavaleiro_lote">Grau de Cavaleiro em lote</option>
 			      </select>
 			    </div>
 			    <div class="large-2 columns price">
@@ -58,75 +51,118 @@
 			    <%= f.hidden_field :status, value: 1 %>
 			    <%= f.hidden_field :price, value: 1 %>
 			</div>
-		    <div class="row">
-		      <div class="large-4 columns">
-		        <label>Nome</label>
-		        <%= f.text_field :name, placeholder: "José Francisco", required: true, value: "Candido sdeve" %>
-		      </div>
-		      <div class="large-4 columns">
-		        <label>CPF</label>
-		        <%= f.text_field :cpf, placeholder: "008.998.998-34", required: true, value: "006.737.443-37" %>
-		      </div>
-		      <div class="large-4 columns">
-		        <label>CID</label>
-		        <%= f.text_field :cid, placeholder: "54545", required: true, value: "67678",pattern: "[0-9]{1,10}" %>
-		      </div>
-		    </div>
+			</fieldset>
+			<fieldset class="demolay">
+				<legend>Informações de pagamento</legend>
+				<div class="row">
+			      <div class="large-4 columns">
+			        <label>Nome </label>
+			        <%= f.text_field :name, placeholder: "Seu nome", required: true, value: "", pattern: "[a-zA-Z]+" %>
+			        <small class="error">O seu nome é obrigatório.</small>
+			      </div>
+			      <div class="large-4 columns">
+			        <label>CPF</label>
+			        <%= f.text_field :cpf, placeholder: "008.998.998-34", required: true, value: "006.737.443-37" %>
+			        <small class="error">O seu CPF é obrigatório.</small>
+			      </div>
+			      <div class="large-4 columns">
+			        <label>CID</label>
+			        <%= f.text_field :cid, placeholder: "54545", required: true, value: "67678",pattern: "integer" %>
+			        <small class="error">A sua CID é obrigatória.</small>
+			      </div>
+			    </div>
 
-		    <div class="row">
-		      <div class="large-6 columns">
-		        <label>Endereço</label>
-		        <%= f.text_field :address, placeholder: "Avenida, Rua, Número, Bairro, Complemento e Cidade", required: true, value: "Okok" %>
-		      </div>
-		      <div class="large-6 columns">
-		        <label>E-mail</label>
-		        <%= f.email_field :email, placeholder: "voce@email.com", required: true, value:"candidosg@gmail.com" %>
-		      </div>
-		    </div>
-		    <div class="row sub-attributes">
-		    <div class="large-4 columns data_iniciacao hidden">
-		        <label>Data de iniciação</label>
-		        <input type="date" name="iniciacao" id="iniciacao" placeholder="19/08/1990">
-		    </div>
-		     <div class="large-4 columns data_elevacao hidden">
-		        <label>Data de elevação</label>
-		        <input type="date" name="elevacao" id="elevacao" placeholder="19/08/1990">
-		      </div>
-		      <div class="large-4 columns capitulo hidden">
-		        <label>Capítulo</label>
-		        <input type="text" name="capitulo" id="capitulo" placeholder="Cap. Cavaleiros da Távula">
-		      </div>
-		      <div class="large-4 columns data_investidura hidden">
-		        <label>Data de investidura</label>
-		        <input type="date" name="investido" id="investido" placeholder="19/08/1990">
-		      </div>
-		      <div class="large-4 columns convento hidden">
-		        <label>Convento</label>
-		        <input type="text" name="convento" id="convento" placeholder="Conv. Cavaleiros da Távula">
-		      </div>
-		      <div class="large-4 columns data_nascimento hidden">
-		        <label>Data de nascimento</label>
-		        <input type="date" name="nascimento" id="nascimento" placeholder="19/08/1990">
-		      </div>
-		      <div class="large-4 columns data_regularizacao hidden">
-		        <label>Data de regularização</label>
-		        <input type="date" name="regularizacao" id="regularizacao" placeholder="19/08/1990">
-		      </div>
-		      <div class="large-4 columns nome_organizacao_filiada hidden">
-		        <label>Nome da organização filiada</label>
-		        <input type="text" name="organizacao-filiada" id="organizacao-filiada" placeholder="">
-		      </div>
-		      <div class="large-4 columns tipo_documento hidden">
-		        <label>Tipo de documento</label>
-		        <input type="text" name="documento" id="documento" placeholder="">
-		      </div>
-		    </div>
-			<div class="row">
+			    <div class="row">
+			      <div class="large-6 columns">
+			        <label>Endereço</label>
+			        <%= f.text_field :address, placeholder: "Avenida, Rua, Número, Bairro, Complemento e Cidade", required: true, value: "Okok", pattern: "alpha_numeric" %>
+			        <small class="error">O seu endereço é obrigatório e deve conter o número do local.</small>
+			      </div>
+			      <div class="large-6 columns">
+			        <label>E-mail</label>
+			        <%= f.email_field :email, placeholder: "seu@email.com", required: true, value:"candidosg@gmail.com", pattern: "email" %>
+			        <small class="error">O seu e-mail é obrigatório e deve ser válido.</small>
+			      </div>
+			    </div>
+			    <div class="row sub-attributes">
+			    <div class="large-4 columns data_iniciacao hidden">
+			        <label>Data de iniciação</label>
+			        <%= f.date_field :data_iniciacao, placeholder: "19/08/1990" %>
+			    </div>
+			     <div class="large-4 columns data_elevacao hidden">
+			        <label>Data de elevação</label>
+			        <%= f.date_field :data_elevacao, placeholder: "19/08/1990" %>
+			      </div>
+			      <div class="large-4 columns capitulo hidden">
+			        <label>Capítulo</label>
+			        <%= f.text_field :capitulo, placeholder: "Capitulo Cavaleiros da Távula, 56", pattern: "alpha_numeric" %>
+			 		<small class="error">O nome do seu Capítulo deve conter o número respectivo.</small>
+			      </div>
+			      <div class="large-4 columns data_investidura hidden">
+			        <label>Data de investidura</label>
+			        <%= f.date_field :data_investidura, placeholder: "19/08/1990" %>
+			      </div>
+			      <div class="large-4 columns convento hidden">
+			        <label>Convento</label>
+			        <%= f.text_field :convento, placeholder: "Convento Cavaleiros da Távula, 50", pattern: "alpha_numeric" %>
+			 		<small class="error">O nome do seu Convento deve conter o número respectivo.</small>
+			      </div>
+			      <div class="large-4 columns data_nascimento hidden">
+			        <label>Data de nascimento</label>
+			        <%= f.date_field :data_nascimento, placeholder: "19/08/1990" %>
+			      </div>
+			      <div class="large-4 columns data_regularizacao hidden">
+			        <label>Data de regularização</label>
+			        <%= f.date_field :data_regularizacao, placeholder: "19/08/1990" %>
+			      </div>
+			      <div class="large-4 columns nome_organizacao_filiada hidden">
+			        <label>Nome da organização filiada</label>
+			        <%= f.text_field :nome_organizacao, placeholder: "O nome da organização", value: "", pattern: "[a-zA-Z]+" %>
+			      </div>
+			      <div class="large-4 columns tipo_documento hidden">
+			        <label>Tipo de documento</label>
+			         <%= f.text_field :tipo_documento, placeholder: "O nome do documento", value: "", pattern: "[a-zA-Z]+" %>
+			      </div>
+			    </div>
+			</fieldset>
+		    
+			<fieldset class="capitulo_convento hidden">
+				<legend>Responsável pelo pagamento</legend>
+				<div class="row">
+			      <div class="large-4 columns">
+			        <label>Nome</label>
+			        <%= f.text_field :name, placeholder: "Seu nome", required: true, pattern: "[a-zA-Z]+" %>
+			        <small class="error">O nome é obrigatório.</small>
+			      </div>
+			      <div class="large-4 columns">
+			        <label>CPF</label>
+			        <%= f.text_field :cpf, placeholder: "008.998.998-34", required: true, value: "006.737.443-37" %>
+			        <small class="error">O CPF é obrigatório.</small>
+			      </div>
+			      <div class="large-4 columns">
+			        <label>CID</label>
+			        <%= f.text_field :cid, placeholder: "54545", required: true, value: "67678",pattern: "[0-9]{1,10}" %>
+			        <small class="error">A CID é obrigatória e apenas números.</small>
+			      </div>
+			    </div>
+			    <div class="row">
+			    	<div class="large-6 columns">
+				        <label>Quantidade de membros no protocolo</label>
+				        <%= f.number_field :qtd_membro, placeholder: "2", required: true, value:"1", min:"1" %>
+				    </div>
+			    	<div class="large-6 columns">
+				        <label>N° do protocolo</label>
+				        <%= f.text_field :protocolo, placeholder: "22222-22", required: true, value:"" %>
+				        <small class="error">O número do protocolo é obrigatório.</small>
+				    </div>
+			    </div>
+			</fieldset>
+		  </fieldset>
+		  	<div class="row">
 				<div class="large-12 columns">
 					<button class="button success" type="submit">Gerar Boleto</button>
 				</div>
 			</div>
-		  </fieldset>
 	<% end %>
 
 <% content_for :title do %>Escolha sua taxa<% end %>

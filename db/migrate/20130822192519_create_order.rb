@@ -8,6 +8,8 @@ class CreateOrder < ActiveRecord::Migration
       t.string :cid
       t.string :address
       t.string :email
+      t.string :protocolo
+      t.integer :qtd_membro
 
       t.decimal :price
 

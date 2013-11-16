@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20131107225851) do
     t.string   "cid"
     t.string   "address"
     t.string   "email"
+    t.string   "protocolo"
+    t.integer  "qtd_membro"
     t.decimal  "price"
     t.date     "data_iniciacao"
     t.date     "data_elevacao"
