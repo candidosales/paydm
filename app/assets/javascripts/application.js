@@ -19,5 +19,4 @@
 //= require core/app
 //= require core/admin
 
-
 $(function(){ $(document).foundation(); });

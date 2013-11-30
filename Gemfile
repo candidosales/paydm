@@ -25,7 +25,8 @@ gem 'coffee-rails', '~> 4.0.1'
 
 # Add Foundation Here
 gem 'compass-rails' # you need this or you get an err
-gem 'zurb-foundation', '~> 4.3.2'
+gem "foundation-rails"
+#gem 'zurb-foundation', '~> 4.3.2'
 
 gem 'nested_form'
 gem 'simple_form'

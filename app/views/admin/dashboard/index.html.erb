@@ -16,7 +16,7 @@
       <td><p><strong><%= o.tipo.capitalize.gsub('_', '/') %></strong></br><small><%= o.operation.capitalize.gsub('_', ' ')   %></small>
 
           <% if !o.protocolo.blank? %>
-            </br><small>Prt: <%=o.protocolo%></small>
+            </br><small>Prot: <%=o.protocolo%></small>
           <% end %>
       </p></td>
       <td><p><span class="icon-user"></span> <%= o.name %>
@@ -49,7 +49,8 @@
         <% if o.tipo == "demolay" %>
           <p><strong><%= humanized_money_with_symbol o.price %></strong></p>
         <% else %>
-          <p><strong><%= humanized_money_with_symbol o.price %></strong><br/> <%= o.qtd_membro%> membro<%= o.qtd_membro > 1 ? "s":"" %></p>
+          <p><strong><%= humanized_money_with_symbol o.price %></strong><br/> 
+            <%= o.qtd_membro%> membro<%= o.qtd_membro > 1 ? "s":"" %></p>
         <% end %>
       </td>
       <td>

@@ -1,7 +1,6 @@
 		<% if user_signed_in? %>
-			 <li class="divider hide-for-small"></li>
-		      <li class="has-dropdown"><a href="#"><span class="icon-user"></span></a>
-
+		      <li class="has-dropdown">
+		      	<a href="#"><span class="icon-user"></span></a>
 		        <ul class="dropdown">
 		           <li> <%= link_to '<span class="icon-list"></span> Admin'.html_safe, admin_root_path %></li>
 		           <li> <%= link_to '<span class="icon-pencil"></span> Editar perfil'.html_safe, edit_user_registration_path %></li>
@@ -10,6 +9,7 @@
 		      </li>
         	
           <% else %>
+         	<li class="divider"></li>
           	<li><%= link_to '<span class="icon-exit"></span> '.html_safe, new_user_session_path, title: "Login"  %></li>
         <% end %>
 
