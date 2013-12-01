@@ -6,7 +6,7 @@ class Order < ActiveRecord::Base
 
 	 def description
 	 	if(self.tipo=="demolay")
-	 		"#{self.tipo.capitalize}, #{self.operation.capitalize}: #{number_to_currency self.price} | Devedor: #{self.name}, CPF: #{self.cpf}, CID: #{self.cid}"
+	 		"#{self.tipo.capitalize}, #{self.operation.capitalize}: #{number_to_currency self.price} | Devedor: #{self.name}"
 	 	else
 	 		result = self.qtd_membro*self.price
 	 		"#{self.operation.capitalize}: #{number_to_currency self.price} x #{self.qtd_membro} = #{number_to_currency result} | Protocolo: #{self.protocolo}"
