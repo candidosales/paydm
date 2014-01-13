@@ -7,7 +7,8 @@ require "bundler/capistrano"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
-set :domain, "54.232.195.152"
+#set :domain, "54.232.195.152"
+set :domain, "54.207.42.19"
 set :application, "paydm"
 set :repository, "git@github.com:candidosales/#{application}.git"
 
