@@ -5,11 +5,11 @@ var Payment  = (function () {
 						{type: 'iniciacao', price:110, attributes:['data_iniciacao']},
 						{type: 'elevacao', price:70, attributes:['data_elevacao']}, 
 						{type: 'renovacao_cid', price:65, attributes:['capitulo']},  
-						{type: 'renovacao_cid_senior', price:75, attributes:['capitulo']},
-						{type: 'renovacao_cid_vitalicio', price:650, attributes:['capitulo']},
+						{type: 'renovacao_cid_senior', price:65, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:725, attributes:['capitulo']},
 						{type: 'formulario_conselho', price:75, attributes:['capitulo']},
 						{type: 'grau_cavaleiro', price:60, attributes:['data_investidura','convento']},
-						{type: 'regularizacao_cadastral', price:100, attributes:['data_nascimento','data_regularizacao']},
+						{type: 'regularizacao_cadastral', price:1, attributes:['data_nascimento','data_regularizacao']},
 						{type: 'requisicao_carta', price:30, attributes:['nome_organizacao_filiada']},
 						{type: 'segunda_via', price:10, attributes:['tipo_documento']},
 	];
@@ -17,7 +17,7 @@ var Payment  = (function () {
 	var operationCapituloConvento = [
 						{type: 'iniciacao_lote', price:110, attributes:['data_iniciacao']},
 						{type: 'elevacao_lote', price:70, attributes:['data_iniciacao']},
-						{type: 'grau_cavaleiro_lote', price:65, attributes:['data_iniciacao']},
+						{type: 'grau_cavaleiro_lote', price:60, attributes:['data_iniciacao']},
 	];
 
 	function verifySelected(){
