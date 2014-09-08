@@ -2,6 +2,7 @@ var Payment  = (function () {
 
 	var operation = null;
 	var operationDemolay = [
+                        {type: 'inscricao_evento', price:30, attributes:['capitulo','loja','cim']}, 
 						{type: 'iniciacao', price:110, attributes:['data_iniciacao']},
 						{type: 'elevacao', price:70, attributes:['data_elevacao']}, 
 						{type: 'renovacao_cid', price:65, attributes:['capitulo']},  

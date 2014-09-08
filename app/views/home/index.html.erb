@@ -23,6 +23,7 @@
 				<div class="large-4 columns demolay hidden">
 			      <label for="operation_demolay">Desejo pagar:</label>
 			      <select id="operation_demolay" class="medium" name="operation_demolay">
+              	      <option value="inscricao_evento">Inscrição em Evento DeMolay</option>
 			      	  <option value="iniciacao">Iniciação ao Grau DeMolay</option>
 			      	  <option value="elevacao">Elevação ao Grau DeMolay</option>
 			          <option value="renovacao_cid">Renovação de CID</option>
@@ -66,9 +67,9 @@
 			        <small class="error">O seu CPF é obrigatório.</small>
 			      </div>
 			      <div class="large-4 columns">
-			        <label>CID</label>
+			        <label>CID / CIM</label>
 			        <%= f.text_field :cid, placeholder: "54545", required: true, value: "",pattern: "integer" %>
-			        <small class="error">A sua CID é obrigatória e são apenas números.</small>
+			        <small class="error">A sua CID/CIM é obrigatória e são apenas números.</small>
 			      </div>
 			    </div>
 
@@ -94,9 +95,9 @@
 			        <%= f.date_field :data_elevacao, placeholder: "19/08/1990" %>
 			      </div>
 			      <div class="large-4 columns capitulo hidden">
-			        <label>Capítulo</label>
+			        <label>Capítulo / Loja</label>
 			        <%= f.text_field :capitulo, placeholder: "Capitulo Cavaleiros da Távula, 56", pattern: "alpha_numeric" %>
-			 		<small class="error">O nome do seu Capítulo deve conter o número respectivo.</small>
+			 		<small class="error">O nome do seu Capítulo/Loja deve conter o número respectivo.</small>
 			      </div>
 			      <div class="large-4 columns data_investidura hidden">
 			        <label>Data de investidura</label>

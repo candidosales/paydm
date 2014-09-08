@@ -7,7 +7,6 @@
       <th width="150">Devedor</th>
       <th width="150">Endereço</th>
       <th width="150">Preço</th>
-      <th width="150">Data</th>
     </tr>
   </thead>
   <tbody>
@@ -18,17 +17,19 @@
           <% if !o.protocolo.blank? %>
             </br><small>Prot: <%=o.protocolo%></small>
           <% end %>
+          </br>
+          <span class="created-at"><%= "há #{time_ago_in_words(o.created_at)}" %><small> - <%=o.created_at.strftime("%d/%m/%y %H:%M:%S") %></small></span>
       </p></td>
       <td><p><span class="icon-user"></span> <%= o.name %>
           </br><small>CPF: <%=o.cpf%></small>
         <% if !o.cid.blank? %>
-          </br><small>CID: <%=o.cid %></small>
+          </br><small>CID / CIM: <%= o.cid %></small>
         <% end %>
         <% if !o.email.blank? %>
           </br><small><%=o.email %></small>
         <% end %>
         <% if !o.capitulo.blank? %>
-          </br><small>Cap: <%=o.capitulo %></small>
+          </br><small>Capítulo / Loja: <%=o.capitulo %></small>
         <% end %>
         <% if !o.data_iniciacao.blank? %>
           </br><small>Iniciação: <%=o.data_iniciacao.strftime("%d/%m/%y") %></small>
@@ -52,11 +53,7 @@
           <p><strong><%= humanized_money_with_symbol o.price %></strong><br/> 
             <%= o.qtd_membro%> membro<%= o.qtd_membro > 1 ? "s":"" %></p>
         <% end %>
-      </td>
-      <td>
-        <%= o.created_at.to_s(:long) %>
-      </td>
-        
+      </td>        
     </tr>
 	<% end %>
   </tbody>

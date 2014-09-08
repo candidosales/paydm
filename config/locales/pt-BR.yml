@@ -95,13 +95,13 @@ pt-BR:
       month: Mês
       second: Segundo
       year: Ano
-  errors: &errors
+  errors:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: deve ser aceito
       blank: não pode ficar em branco
       present: deve ficar em branco
-      confirmation: não está de acordo com a confirmação
+      confirmation: não é igual a %{attribute}
       empty: não pode ficar vazio
       equal_to: deve ser igual a %{count}
       even: deve ser par
@@ -123,6 +123,7 @@ pt-BR:
       too_long: ! 'é muito longo (máximo: %{count} caracteres)'
       too_short: ! 'é muito curto (mínimo: %{count} caracteres)'
       wrong_length: não possui o tamanho esperado (%{count} caracteres)
+      other_than: "deve ser diferente de %{count}"
     template:
       body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
@@ -187,6 +188,7 @@ pt-BR:
     percentage:
       format:
         delimiter: .
+        format: "%n%"
     precision:
       format:
         delimiter: .
@@ -202,10 +204,3 @@ pt-BR:
       long: ! '%d de %B de %Y, %H:%M'
       short: ! '%d de %B, %H:%M'
     pm: ''
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
-  activemodel:
-    errors:
-      <<: *errors
-  activerecord:
-    errors:
-      <<: *errors
