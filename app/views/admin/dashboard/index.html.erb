@@ -40,6 +40,9 @@
         <% if !o.convento.blank? %>
           </br><small>Convento: <%=o.convento%></small>
         <% end %>
+        <% if !o.grau_cavaleiro.blank? %>
+          </br><small>Grau: <%=o.grau_cavaleiro%></small>
+        <% end %>
         <% if !o.data_investidura.blank? %>
           </br><small>Investidura: <%=o.data_investidura.strftime("%d/%m/%y") %></small>
         <% end %>

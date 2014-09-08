@@ -21,7 +21,7 @@
 			      <%= f.select :tipo, [[ "DeMolay", "demolay" ],[ "Capítulo / Convento", "capitulo_convento" ]] %>
 			    </div>
 				<div class="large-4 columns demolay hidden">
-			      <label for="operation_demolay">Desejo pagar:</label>
+			      <label for="operation_demolay">Quero pagar:</label>
 			      <select id="operation_demolay" class="medium" name="operation_demolay">
               	      <option value="inscricao_evento">Inscrição em Evento DeMolay</option>
 			      	  <option value="iniciacao">Iniciação ao Grau DeMolay</option>
@@ -37,7 +37,7 @@
 			      </select>
 			    </div>
 			    <div class="large-4 columns capitulo_convento hidden">
-			      <label for="operation_capitulo_convento">Desejo pagar:</label>
+			      <label for="operation_capitulo_convento">Quero pagar:</label>
 			      <select id="operation_capitulo_convento" class="medium" name="operation_capitulo_convento">
 			      	  <option value="iniciacao_lote">Iniciação em lote</option>
 			      	  <option value="elevacao_lote">Elevação ao Grau DeMolay em lote</option>
@@ -54,11 +54,11 @@
 			</div>
 			</fieldset>
 			<fieldset class="demolay">
-				<legend>Informações de pagamento</legend>
+				<legend>Suas informações para pagamento</legend>
 				<div class="row">
 			      <div class="large-4 columns">
 			        <label>Nome </label>
-			        <%= f.text_field :name, placeholder: "Seu nome", required: true, value: "", pattern: "[a-zA-Z]+" %>
+			        <%= f.text_field :name, placeholder: "Seu nome, nobre irmão", required: true, value: "", pattern: "[a-zA-Z]+" %>
 			        <small class="error">O seu nome é obrigatório.</small>
 			      </div>
 			      <div class="large-4 columns">
@@ -88,7 +88,7 @@
 			    <div class="row sub-attributes">
 			    <div class="large-4 columns data_iniciacao hidden">
 			        <label>Data de iniciação</label>
-			        <%= f.date_field :data_iniciacao, placeholder: "19/08/1990" %>
+			        <%= f.date_field :data_iniciacao, placeholder: "Você iniciou essa jornada quando?" %>
 			    </div>
 			     <div class="large-4 columns data_elevacao hidden">
 			        <label>Data de elevação</label>
@@ -107,6 +107,11 @@
 			        <label>Convento</label>
 			        <%= f.text_field :convento, placeholder: "Convento Cavaleiros da Távula, 50", pattern: "alpha_numeric" %>
 			 		<small class="error">O nome do seu Convento deve conter o número respectivo.</small>
+			      </div>
+			      <div class="large-4 columns grau_cavaleiro hidden">
+			        <label>Grau de Cavaleiro</label>
+			        <%= f.text_field :grau_cavaleiro, placeholder: "Ébano ou Cruz de Salém?", pattern: "[a-zA-Z]+" %>
+			 		<small class="error">O nome do seu Grau de Cavaleiro</small>
 			      </div>
 			      <div class="large-4 columns data_nascimento hidden">
 			        <label>Data de nascimento</label>
