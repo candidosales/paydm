@@ -8,7 +8,7 @@ var Payment  = (function () {
 						{type: 'renovacao_cid', price:65, attributes:['capitulo']},  
 						{type: 'renovacao_cid_senior', price:65, attributes:['capitulo']},
 						{type: 'renovacao_cid_vitalicio', price:725, attributes:['capitulo']},
-						{type: 'formulario_conselho', price:75, attributes:['capitulo']},
+						{type: 'formulario_conselho', price:65, attributes:['capitulo']},
 						{type: 'grau_cavaleiro', price:60, attributes:['data_investidura','convento']},
 						{type: 'regularizacao_cadastral', price:1, attributes:['data_nascimento','data_regularizacao']},
 						{type: 'requisicao_carta', price:30, attributes:['nome_organizacao_filiada']},
