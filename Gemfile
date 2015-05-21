@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0'
 gem 'rails-i18n','~> 4.0.0'
 
 gem 'pagseguro-oficial', git: 'git://github.com/pagseguro/ruby.git'
@@ -11,12 +11,12 @@ gem 'mysql2'
 #gem 'pg'
 
 # Use Devise for user authentication
-gem "devise", "~> 3.2.0"
+gem "devise", "~> 3.4.1"
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.1'
+gem 'sass-rails', '~> 5.0.1'
 # A simple and lightweight mixin library for Sass
-gem 'bourbon'
+gem 'bourbon', '~>4.2.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -25,8 +25,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.1'
 
 # Add Foundation Here
-gem 'compass-rails' # you need this or you get an err
-gem "foundation-rails"
+gem 'compass-rails', '~> 2.0.4' # you need this or you get an err
+gem "foundation-rails", '~>5.5.2.1'
 #gem 'zurb-foundation', '~> 4.3.2'
 
 gem 'nested_form'
