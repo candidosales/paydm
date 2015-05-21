@@ -6,6 +6,7 @@ set :repo_url, 'git@github.com:candidosales/paydm.git'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.0'
+set :rails_env, 'production'  
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -63,4 +64,13 @@ namespace :deploy do
 
   after :finishing, 'deploy:cleanup'
 
+end
+
+namespace :logs do
+  desc "tail rails logs"
+  task :tail_rails do
+    on roles(:app) do
+      execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
+    end
+  end
 end
