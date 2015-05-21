@@ -35,8 +35,10 @@ class OrdersController < ApplicationController
     # exception_notification poderá notificar sobre o ocorrido.
     #
     # Se estiver tudo certo, redireciona o comprador para o PagSeguro.
+    p '-----------------------------------------------------------------'
+    p response
+    p '-----------------------------------------------------------------'
     if response.errors.any?
-      p response
       response = Array(response.errors)
       redirect_to root_path, alert: "#{response.join(' </br> ')}"
       #raise response.errors.join("\n")
