@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140908011044) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "orders", force: true do |t|
     t.string   "tipo"
     t.string   "operation"
@@ -26,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140908011044) do
     t.string   "email"
     t.string   "protocolo"
     t.integer  "qtd_membro"
-    t.decimal  "price"
+    t.decimal  "price",              precision: 10, scale: 0
     t.date     "data_iniciacao"
     t.date     "data_elevacao"
     t.date     "data_investidura"

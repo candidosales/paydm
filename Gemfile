@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -7,7 +7,8 @@ gem 'rails-i18n','~> 4.0.0'
 gem 'pagseguro-oficial', git: 'git://github.com/pagseguro/ruby.git'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'mysql2'
+#gem 'pg'
 
 # Use Devise for user authentication
 gem "devise", "~> 3.2.0"
@@ -33,6 +34,7 @@ gem 'simple_form'
 
 gem 'money-rails'
 
+gem 'therubyracer', :group => :assets
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -56,13 +58,22 @@ group :development do
   gem 'pry-meta'
   gem 'thin'
   gem 'foreman'
-  gem 'capistrano','~> 2.15.4'
+  # gem 'capistrano','~> 2.15.4'
+
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails', '~> 1.1.1'
+
+  # Add this if you're using rbenv
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
 end
 
 # Use unicorn as the app server
 group :production do
-  gem 'unicorn'
-  gem 'rubber'
+  # gem 'unicorn'
+  # gem 'rubber'
+  gem 'passenger'
 end
 
 # Use ActiveModel has_secure_password
@@ -70,3 +81,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'open4'
