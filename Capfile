@@ -24,6 +24,7 @@ require 'capistrano/rails/migrations'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rails/collection'
+require 'capistrano3/unicorn'
 
 # If you are using rbenv add these lines:
  require 'capistrano/rbenv'
