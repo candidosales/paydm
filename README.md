@@ -287,4 +287,10 @@ Adicione as configs do db aki
 
 
 
+http://theflyingdeveloper.com/server-setup-ubuntu-nginx-unicorn-capistrano-postgres/
+
+sudo usermod -a -G sudo deploy
+
+
+
 © 2014-2015, One Month, Inc. | Blog | Feedback | About GoRails
