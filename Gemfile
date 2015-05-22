@@ -64,6 +64,7 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-rails-collection'
+  gem 'capistrano3-unicorn'
 
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
@@ -72,9 +73,9 @@ end
 
 # Use unicorn as the app server
 group :production do
-  # gem 'unicorn'
+  gem 'unicorn'
   # gem 'rubber'
-  gem 'passenger'
+  # gem 'passenger'
 end
 
 # Use ActiveModel has_secure_password

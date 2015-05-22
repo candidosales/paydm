@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:candidosales/paydm.git'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.0'
-set :rails_env, 'production'  
+set :rails_env, 'production'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -49,6 +49,7 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
     end
+    invoke 'unicorn:reload'
   end
 
   after :publishing, :restart

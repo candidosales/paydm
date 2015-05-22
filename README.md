@@ -282,6 +282,8 @@ Adicione as configs do db aki
 /var/log/nginx/access.log
 /var/log/nginx/error.log
 
+>uri=URI('https://ws.sandbox.pagseguro.uol.com.br/v2/sessions')
+>res=Net::HTTP.post_form(uri,email: PagSeguro.email,token: PagSeguro.token)
 
 
 
