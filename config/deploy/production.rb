@@ -15,6 +15,7 @@
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 set :stage, :production
+set :password, "deployer"
 server '45.79.0.161', user: 'deploy', roles: %w{web app db}, primary: true
 
 # you can set custom ssh options

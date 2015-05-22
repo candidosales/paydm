@@ -5,7 +5,7 @@ Paydm::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  
+
   resources :orders
 
   get 'checkout/confirmation', to: 'checkout#confirmation', as: 'confirmation'
@@ -51,7 +51,7 @@ Paydm::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

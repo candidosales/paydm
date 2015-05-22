@@ -23,6 +23,7 @@ require 'capistrano/deploy'
 require 'capistrano/rails/migrations'
 require 'capistrano/bundler'
 require 'capistrano/rails'
+require 'capistrano/rails/collection'
 
 # If you are using rbenv add these lines:
  require 'capistrano/rbenv'
