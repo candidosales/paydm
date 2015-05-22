@@ -6,16 +6,6 @@ GIT
       capistrano (~> 3.1)
       sshkit (~> 1.3)
 
-GIT
-  remote: git://github.com/pagseguro/ruby.git
-  revision: a06b982f3d47c777def9d1f4d0ce3ef1abc40fee
-  specs:
-    pagseguro-oficial (2.1.1)
-      aitch (>= 0.2.1)
-      i18n
-      json
-      nokogiri
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -162,6 +152,11 @@ GEM
       mini_portile (~> 0.6.0)
     open4 (1.3.4)
     orm_adapter (0.5.0)
+    pagseguro-oficial (2.1.1)
+      aitch (>= 0.2.1)
+      i18n
+      json
+      nokogiri
     passenger (5.0.8)
       rack
       rake (>= 0.8.1)
@@ -287,7 +282,7 @@ DEPENDENCIES
   mysql2
   nested_form
   open4
-  pagseguro-oficial!
+  pagseguro-oficial (~> 2.1.0)
   passenger
   pry-meta
   rails (= 4.2.0)

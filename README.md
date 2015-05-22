@@ -279,6 +279,9 @@ nano /home/deploy/my_app/shared/config/database.yml
 Adicione as configs do db aki
 
 
+/var/log/nginx/access.log
+/var/log/nginx/error.log
+
 
 
 

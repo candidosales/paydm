@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'rails-i18n','~> 4.0.0'
 
-gem 'pagseguro-oficial', git: 'git://github.com/pagseguro/ruby.git'
+gem "pagseguro-oficial", "~> 2.1.0"
 
 # Use postgresql as the database for Active Record
 gem 'mysql2'
