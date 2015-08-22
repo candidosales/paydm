@@ -2,17 +2,17 @@ var Payment  = (function () {
 
 	var operation = null;
 	var operationDemolay = [
-                    //  {type: 'inscricao_evento', price:40, attributes:['capitulo','grau_cavaleiro']}, 
-						{type: 'iniciacao', price:110, attributes:['data_iniciacao']},
-						{type: 'elevacao', price:70, attributes:['data_elevacao']}, 
-						{type: 'renovacao_cid', price:65, attributes:['capitulo']},  
-						{type: 'renovacao_cid_senior', price:65, attributes:['capitulo']},
-						{type: 'renovacao_cid_vitalicio', price:725, attributes:['capitulo']},
+                    //  {type: 'inscricao_evento', price:40, attributes:['capitulo','grau_cavaleiro']},
+						{type: 'iniciacao', price:120, attributes:['data_iniciacao']},
+						{type: 'elevacao', price:70, attributes:['data_elevacao']},
+						{type: 'renovacao_cid', price:70, attributes:['capitulo']},
+						{type: 'renovacao_cid_senior', price:70, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:765, attributes:['capitulo']},
 						{type: 'formulario_conselho', price:65, attributes:['capitulo']},
-						{type: 'grau_cavaleiro', price:60, attributes:['data_investidura','convento']},
-						{type: 'regularizacao_cadastral', price:1, attributes:['data_nascimento','data_regularizacao']},
-						{type: 'requisicao_carta', price:30, attributes:['nome_organizacao_filiada']},
-						{type: 'segunda_via', price:10, attributes:['tipo_documento']},
+						{type: 'grau_cavaleiro', price:65, attributes:['data_investidura','convento']},
+						{type: 'regularizacao_cadastral', price:2, attributes:['data_nascimento','data_regularizacao']},
+						{type: 'requisicao_carta', price:35, attributes:['nome_organizacao_filiada']},
+						{type: 'segunda_via', price:15, attributes:['tipo_documento']},
 	];
 
 	var operationCapituloConvento = [
@@ -57,7 +57,7 @@ var Payment  = (function () {
 					return false;
 				}
 			});
-			setOrderOperation(result);		
+			setOrderOperation(result);
 			console.log('result: '+result);
 			showPrice(result);
 		}
@@ -87,7 +87,7 @@ var Payment  = (function () {
 
 	function setOrderOperation(value){
 		console.log('order_operation: '+value);
-		$('#order_operation').val(value);	
+		$('#order_operation').val(value);
 	}
 
 	function priceCapituloConvento(value){
@@ -103,7 +103,7 @@ var Payment  = (function () {
 	      getOperation:getOperation,
 	      setOrderOperation:setOrderOperation
 	    }
-}());	
+}());
 
 var orderType = $('#order_tipo');
 

@@ -55,6 +55,7 @@ group :doc do
 end
 
 group :development do
+  gem 'quiet_assets'
   gem 'pry-meta'
   gem 'thin'
   gem 'foreman'
