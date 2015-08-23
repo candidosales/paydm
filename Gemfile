@@ -60,14 +60,17 @@ group :development do
   gem 'foreman'
   # gem 'capistrano','~> 2.15.4'
 
-  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails'
+  gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rails-collection'
   gem 'capistrano3-unicorn'
 
   # This plugin helps you setup and debug ssh-agent forwarding for Capistrano deployment.
   gem 'capistrano-ssh-doctor', '~> 1.0'
+
+  # Skips asset compilation if none of the assets were changed since last release.
+  gem 'capistrano-faster-assets', '~> 1.0'
 
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
