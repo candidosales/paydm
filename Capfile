@@ -12,5 +12,7 @@ require 'capistrano3/unicorn'
 # If you are using rbenv add these lines:
  require 'capistrano/rbenv'
 
+ require 'capistrano/ssh_doctor'
+
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }

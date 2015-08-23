@@ -36,9 +36,6 @@ gem 'money-rails'
 
 gem 'therubyracer', :group => :assets
 
-gem 'sprockets', '~> 2.8'
-
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -68,6 +65,9 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rails-collection'
   gem 'capistrano3-unicorn'
+
+  # This plugin helps you setup and debug ssh-agent forwarding for Capistrano deployment.
+  gem 'capistrano-ssh-doctor', '~> 1.0'
 
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
