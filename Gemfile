@@ -60,7 +60,7 @@ group :development do
   gem 'foreman'
   # gem 'capistrano','~> 2.15.4'
 
-  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.3'
   gem 'capistrano-rails-collection'
