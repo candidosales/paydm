@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.3'
 gem 'rails-i18n','~> 4.0.0'
 
 gem "pagseguro-oficial", "~> 2.1.0"
