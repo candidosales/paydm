@@ -36,6 +36,8 @@ gem 'money-rails'
 
 gem 'therubyracer', :group => :assets
 
+gem 'sprockets', '~> 2.8'
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

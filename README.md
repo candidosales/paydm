@@ -260,3 +260,6 @@ sudo usermod -a -G sudo deploy
 
 
 © 2014-2015, One Month, Inc. | Blog | Feedback | About GoRails
+
+## Access server
+ssh deploy@45.79.0.161 / root 
