@@ -34,7 +34,7 @@ gem 'simple_form'
 
 gem 'money-rails'
 
-# gem 'therubyracer', :group => :assets
+gem 'therubyracer', :group => :assets
 
 gem 'sprockets', '~> 2.8'
 
