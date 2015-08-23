@@ -70,7 +70,7 @@ group :development do
   gem 'capistrano-ssh-doctor', '~> 1.0'
 
   # Skips asset compilation if none of the assets were changed since last release.
-  gem 'capistrano-faster-assets', '~> 1.0'
+  # gem 'capistrano-faster-assets', '~> 1.0'
 
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
