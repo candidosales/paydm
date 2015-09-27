@@ -3,6 +3,9 @@ lock '3.2.1'
 
 set :application, 'paydm'
 set :repo_url, 'git@github.com:candidosales/paydm.git'
+set :scm, :git
+set :keep_releases, 5
+set :deploy_via, :remote_cache
 
 set :linked_files, %w{config/database.yml .env}
 set :linked_dirs, %w{tmp/pids}
