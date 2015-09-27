@@ -20,16 +20,25 @@ Digital Ocean lets you select from pre-uploaded keys to install, making the proc
 ## Install prerequisites
 
 root@remote $ apt-get update
-root@remote $ apt-get install curl git postgres postgres-contrib libpq-dev git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev nodejs nginx
+root@remote $ apt-get install curl git libpq-dev git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev nodejs nginx
 
 ## Create deploy user
 root@remote $ adduser deploy
 root@remote $ passwd -l deploy
 root@remote $ sudo usermod -a -G sudo deploy
+root@remote $ passwd deploy
+
+## Instal postgresql
+root@remote $ apt-get install postgresql-client
 
 ## Install mysql
 
-root@remote $  sudo apt-get install libmysqlclient16 libmysqlclient16-dev mysql-client mysql-common mysql-server
+root@remote $  sudo apt-get install mysql-client mysql-common mysql-server
+root@remote $ apt-get install -y libmysqlclient-dev
+
+Saia e entre de novo no como user deploy
+ssh deploy@00.00.0.000
+
 
 ## Install rbenv (and ruby-build)
 
@@ -39,10 +48,18 @@ deploy@remote $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 deploy@remote $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile  
 
 Restart your shell.
+deploy@remote $ exec bash -l
 
 ## Install a ruby:
 
 deploy@remote $ rbenv install 2.2.0
+deploy@remote $ rbenv global 2.2.0
+
+## Problem install : 2.2.0 Build fails on Ubuntu 14.04.1
+
+ deploy@remote $ sudo apt-get install libffi-dev
+
+ Restart install ruby
 
 ## Set up app server-side
 
@@ -54,7 +71,8 @@ deploy@remote $ mkdir ~/apps/<app-name>/shared
 user@local $ scp config/database.yml deploy@server-ip:~/apps/<app-name>/shared/config/database.yml
 
 ### Create log unicorn e .env
-touch ~/apps/<app-name>/shared/log/unicorn.stderr.log
+deploy@remote $ mkdir ~/apps/<app-name>/shared
+deploy@remote $ touch ~/apps/<app-name>/shared/log/unicorn.stderr.log
 deploy@remote $ touch ~/apps/<app-name>/shared/.env
 
 
@@ -254,6 +272,7 @@ user@local $ cap production deploy
 
 
 http://theflyingdeveloper.com/server-setup-ubuntu-nginx-unicorn-capistrano-postgres/
+https://help.ubuntu.com/community/PostgreSQL
 
 sudo usermod -a -G sudo deploy
 
@@ -271,3 +290,6 @@ Remover do Capfile todos os capistrano/rails e deixa somente capistrano/migratio
 
 2. Problema em não reiniciar o unicorn.
 Identificar os processos ( ps aux | grep unicorn ) e depois matá-los ( kill )
+
+## Password Deploy image Linode / deploy user :
+Rootpaydm
