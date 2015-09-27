@@ -90,7 +90,7 @@ upstream app_server {
 
 server {
   listen 80;
-  server_name <app-domain>;
+  server_name <app-domain / ip-server>;
 
   root /home/deploy/apps/<app-name>/current/public;
 
