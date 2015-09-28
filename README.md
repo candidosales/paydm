@@ -274,6 +274,8 @@ user@local $ cap production deploy
 http://theflyingdeveloper.com/server-setup-ubuntu-nginx-unicorn-capistrano-postgres/
 https://help.ubuntu.com/community/PostgreSQL
 
+http://benjaminknofe.com/blog/2014/03/08/zero-downtime-deployment-with-unicorn-and-capistrano/
+
 sudo usermod -a -G sudo deploy
 
 
@@ -290,6 +292,11 @@ Remover do Capfile todos os capistrano/rails e deixa somente capistrano/migratio
 
 2. Problema em não reiniciar o unicorn.
 Identificar os processos ( ps aux | grep unicorn ) e depois matá-los ( kill )
+
+3. Problema realizar o deploy, os arquivos estão atualizando no server, mas quando acesso no browser não atualizando
+cap production unicorn:legacy_restart
+Ou
+Reinicie o servidor : reboot e em seguida cap production unicorn:restart
 
 ## Password Deploy image Linode / deploy user :
 Rootpaydm
