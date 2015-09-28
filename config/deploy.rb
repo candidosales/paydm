@@ -27,8 +27,8 @@ namespace :deploy do
     end
   end
 
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
+  after :publishing, :restart
+  after :finishing, :cleanup
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
