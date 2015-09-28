@@ -5,7 +5,7 @@ set :application, 'paydm'
 set :repo_url, 'git@github.com:candidosales/paydm.git'
 set :scm, :git
 set :keep_releases, 5
-set :deploy_via, :remote_cache
+# set :deploy_via, :remote_cache
 
 set :linked_files, %w{config/database.yml .env}
 set :linked_dirs, %w{tmp/pids}
@@ -27,7 +27,8 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  after :publishing, 'deploy:restart'
+  after :finishing, 'deploy:cleanup'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
