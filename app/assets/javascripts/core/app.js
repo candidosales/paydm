@@ -3,8 +3,7 @@ var Payment  = (function () {
 	var operation = null;
 	var operationDemolay = [
                     //  {type: 'inscricao_evento', price:40, attributes:['capitulo','grau_cavaleiro']},
-						{type: 'iniciacao', price:120, attributes:['data_iniciacao']},
-						{type: 'elevacao', price:70, attributes:['data_elevacao']},
+						{type: 'iniciacao', price:170, attributes:['data_iniciacao']},
 						{type: 'renovacao_cid', price:70, attributes:['capitulo']},
 						{type: 'renovacao_cid_senior', price:70, attributes:['capitulo']},
 						{type: 'renovacao_cid_vitalicio', price:765, attributes:['capitulo']},
