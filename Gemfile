@@ -7,7 +7,7 @@ gem 'rails-i18n','~> 4.0.0'
 gem "pagseguro-oficial", "~> 2.1.0"
 
 # Use postgresql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 #gem 'pg'
 
 # Use Devise for user authentication
