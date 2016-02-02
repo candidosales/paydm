@@ -3,12 +3,12 @@ var Payment  = (function () {
 	var operation = null;
 	var operationDemolay = [
                     //  {type: 'inscricao_evento', price:40, attributes:['capitulo','grau_cavaleiro']},
-						{type: 'iniciacao', price:170, attributes:['data_iniciacao']},
-						{type: 'renovacao_cid', price:70, attributes:['capitulo']},
-						{type: 'renovacao_cid_senior', price:70, attributes:['capitulo']},
-						{type: 'renovacao_cid_vitalicio', price:765, attributes:['capitulo']},
+						{type: 'iniciacao', price:180, attributes:['data_iniciacao']},
+						{type: 'renovacao_cid', price:74, attributes:['capitulo']},
+						{type: 'renovacao_cid_senior', price:74, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:810, attributes:['capitulo']},
 						{type: 'formulario_conselho', price:65, attributes:['capitulo']},
-						{type: 'grau_cavaleiro', price:65, attributes:['data_investidura','convento']},
+						{type: 'grau_cavaleiro', price:69, attributes:['data_investidura','convento']},
 						{type: 'regularizacao_cadastral', price:2, attributes:['data_nascimento','data_regularizacao']},
 						{type: 'requisicao_carta', price:35, attributes:['nome_organizacao_filiada']},
 						{type: 'segunda_via', price:15, attributes:['tipo_documento']},
