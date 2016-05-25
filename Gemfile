@@ -4,14 +4,14 @@ source 'http://rubygems.org'
 gem 'rails', '4.2.3'
 gem 'rails-i18n','~> 4.0.0'
 
-gem "pagseguro-oficial", "~> 2.1.0"
+gem 'pagseguro-oficial', '~> 2.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 #gem 'pg'
 
 # Use Devise for user authentication
-gem "devise", "~> 3.4.1"
+gem 'devise', '~> 3.4.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.1'
@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.0.1'
 
 # Add Foundation Here
 gem 'compass-rails', '~> 2.0.4' # you need this or you get an err
-gem "foundation-rails", '~>5.5.2.1'
+gem 'foundation-rails', '~>5.5.2.1'
 #gem 'zurb-foundation', '~> 4.3.2'
 
 gem 'nested_form'
@@ -73,14 +73,14 @@ group :development do
   # gem 'capistrano-faster-assets', '~> 1.0'
 
   # Add this if you're using rbenv
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rbenv', github: 'capistrano/rbenv'
 
 end
 
 # Use unicorn as the app server
 group :production do
-  gem 'unicorn'
-  # gem 'rubber'
+  gem 'puma'
+  gem 'pg'
   # gem 'passenger'
 end
 
