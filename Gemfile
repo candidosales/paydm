@@ -1,14 +1,15 @@
 source 'http://rubygems.org'
-
+ruby '2.2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 gem 'rails-i18n','~> 4.0.0'
+gem 'rails_12factor'
+
 
 gem 'pagseguro-oficial', '~> 2.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
-#gem 'pg'
 
 # Use Devise for user authentication
 gem 'devise', '~> 3.4.1'
@@ -27,7 +28,6 @@ gem 'coffee-rails', '~> 4.0.1'
 # Add Foundation Here
 gem 'compass-rails', '~> 2.0.4' # you need this or you get an err
 gem 'foundation-rails', '~>5.5.2.1'
-#gem 'zurb-foundation', '~> 4.3.2'
 
 gem 'nested_form'
 gem 'simple_form'
