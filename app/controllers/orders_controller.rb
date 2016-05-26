@@ -2,8 +2,6 @@ class OrdersController < ApplicationController
   def create
   	@order = Order.new(order_params)
     @order.save
-  	puts @order.description
-  	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido."
 
     payment = PagSeguro::PaymentRequest.new
     payment.reference = @order.id
@@ -27,14 +25,8 @@ class OrdersController < ApplicationController
     payment.extra_params << { tipo: @order.tipo }
     payment.extra_params << { operacao: @order.operation }
     
-    puts payment.inspect
-    
     response = payment.register
     
-    # Caso o processo de checkout tenha dado errado, lança uma exceção.
-    # Assim, um serviço de rastreamento de exceções ou até mesmo a gem
-    # exception_notification poderá notificar sobre o ocorrido.
-    #
     # Se estiver tudo certo, redireciona o comprador para o PagSeguro.
     if response.errors.any?
       response = Array(response.errors)
