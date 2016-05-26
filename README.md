@@ -281,10 +281,6 @@ sudo usermod -a -G sudo deploy
 
 
 © 2014-2015, One Month, Inc. | Blog | Feedback | About GoRails
-
-## Access server
-ssh deploy@45.79.0.161 / root
-
 ## Problemas deploy
 
 1. Problema de precompile assets
@@ -300,4 +296,6 @@ Reinicie o servidor : reboot e em seguida cap production unicorn:restart
 
 ## Password Deploy image Linode / deploy user :
 Rootpaydm
+
+### Deploy Heroku
 

@@ -6,8 +6,7 @@ gem 'rails-i18n','~> 4.0.0'
 gem 'rails_12factor'
 
 
-gem 'pagseguro-oficial', '~> 2.1.0'
-
+gem 'pagseguro-oficial', '~> 2.5.0'
 # Use postgresql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 
@@ -74,7 +73,8 @@ group :development do
 
   # Add this if you're using rbenv
   gem 'capistrano-rbenv', github: 'capistrano/rbenv'
-
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Use unicorn as the app server

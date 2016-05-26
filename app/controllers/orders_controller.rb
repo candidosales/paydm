@@ -2,11 +2,7 @@ class OrdersController < ApplicationController
   def create
   	@order = Order.new(order_params)
     @order.save
-  	p @order.id
-    p @order.description
-    p @order.cpf
-    p validate_sender_name(name: @order.name, :tipo => @order.tipo)
-
+  	puts @order.description
   	#redirect_to root_path, notice: "Enviamos um e-mail para #{@order.email} confirmando seu pedido."
 
     payment = PagSeguro::PaymentRequest.new
@@ -14,34 +10,36 @@ class OrdersController < ApplicationController
     payment.notification_url = notifications_url
     payment.redirect_url = thanks_url
 
-    #@order.products.each do |product|
-      payment.items << {
-        id: @order.id,
-        description: @order.description,
-        amount: @order.price,
-        weight: 1
+  
+    payment.items << {
+      id: @order.id,
+      description: @order.description,
+      amount: @order.price,
+      weight: 1
+    }
 
-      }
-    #end
-      payment.sender = {
-       email: @order.email,
-       name: validate_sender_name(name: @order.name, :tipo => @order.tipo),
-       cpf: @order.cpf.gsub(/[.-]/,'')
-      }
+    payment.sender = {
+      name: validate_sender_name(name: @order.name, tipo: @order.tipo),
+      email: @order.email,
+      cpf: @order.cpf.gsub(/[.-]/,'')
+    }
+    
+    payment.extra_params << { tipo: @order.tipo }
+    payment.extra_params << { operacao: @order.operation }
+    
+    puts payment.inspect
+    
     response = payment.register
-
+    
     # Caso o processo de checkout tenha dado errado, lança uma exceção.
     # Assim, um serviço de rastreamento de exceções ou até mesmo a gem
     # exception_notification poderá notificar sobre o ocorrido.
     #
     # Se estiver tudo certo, redireciona o comprador para o PagSeguro.
-    p '-----------------------------------------------------------------'
-    p response
-    p '-----------------------------------------------------------------'
     if response.errors.any?
       response = Array(response.errors)
       redirect_to root_path, alert: "#{response.join(' </br> ')}"
-      #raise response.errors.join("\n")
+      # raise response.errors.join("\n")
     else
       redirect_to response.url
     end
@@ -60,15 +58,11 @@ class OrdersController < ApplicationController
     # caso será outro espaço \s.
     @name = @name.gsub('/\d/', '').gsub('/[\n\t\r]/', ' ').gsub('/\s(?=\s)/', '').split(' ')
 
-    if(@name.count == 1)
-        @name << @tipo
-    end
+    @name << @tipo if @name.count == 1
     @name.join(' ')
   end
 
   private
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit!
     end
