@@ -1,0 +1,16 @@
+{
+  "name": "Sistema de pagamento DeMolay",
+  "description": "Facilitar a gestão do Grandes Capítulos do Brasil. Requer conta no PagSeguro",
+  "website": "http://www.demolaypi.org.br/",
+  "repository": "https://github.com/candidosales/paydm",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ruby_on_Rails_logo.svg",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "production",
+    "RACK_ENV": "production",
+    "RAILS_SERVE_STATIC_FILES": "true"
+  },
+  "addons": ["heroku-postgresql"]
+}
