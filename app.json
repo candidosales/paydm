@@ -1,5 +1,5 @@
 {
-  "name": "Sistema de pagamento DeMolay",
+  "name": "Sistema de Pagamento DeMolay",
   "description": "Facilitar a gestão do Grandes Capítulos do Brasil. Requer conta no PagSeguro",
   "website": "http://www.demolaypi.org.br/",
   "repository": "https://github.com/candidosales/paydm",

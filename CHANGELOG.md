@@ -1,5 +1,8 @@
 # PayDM Changelog
 
+### 2.2.0 (08 de Agosto de 2016)
+* Incluido botão do Heroku
+
 ### 2.1.0 (26 de Maio de 2016)
 * Atualizando API PagSeguro 2.5.0v
 * Corrigido bug de descrição de valor
