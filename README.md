@@ -7,7 +7,7 @@ paydm - Sistema de Pagamento DeMolay
 
 ## Primeiros passos
 
-### Atualize com seu [Token do PagSeguro](https://pagseguro.uol.com.br/integracao/token-de-seguranca.jhtml) no [config/initializers/pagseguro.rb](https://github.com/candidosales/paydm/blob/master/config/initializers/pagseguro.rb)
+1. Atualize com seu [Token do PagSeguro](https://pagseguro.uol.com.br/integracao/token-de-seguranca.jhtml) no [config/initializers/pagseguro.rb](https://github.com/candidosales/paydm/blob/master/config/initializers/pagseguro.rb)
 
 ```ruby
 PagSeguro.configure do |config|
@@ -18,7 +18,7 @@ PagSeguro.configure do |config|
 end
 ```
 
-### Para atualizar os valores das taxas ou alterar os campos para cada tipo de taxa atualize o arquivo [app/assets/javascripts/core/app.js](https://github.com/candidosales/paydm/blob/master/app/assets/javascripts/core/app.js)
+2. Para atualizar os valores das taxas ou alterar os campos para cada tipo de taxa atualize o arquivo [app/assets/javascripts/core/app.js](https://github.com/candidosales/paydm/blob/master/app/assets/javascripts/core/app.js)
 
 ```javascript
 var operationDemolay = [
