@@ -50,7 +50,7 @@ Os campos que podem ser usados são:
 * Nome da organização filiada: **nome_organizacao_filiada**
 * Tipo de documento: **tipo_documento**
 
-Você adicionar ou remover de cada tipo de pagamento pelo valor **attributes**
+Você pode adicionar ou remover de cada tipo de pagamento pelo valor **attributes**
 
 ## Use o Heroku como servidor
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/candidosales/paydm)
