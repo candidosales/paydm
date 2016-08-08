@@ -1,9 +1,11 @@
 paydm - Sistema de Pagamento DeMolay
 =====
 
-*OBS:* Requer conta no PagSeguro
+**OBS:** Requer conta no PagSeguro
+[![PagSeguro](https://stc.pagseguro.uol.com.br/pagseguro/i/logos/logo_pagseguro200x41.1470259085855.png)](https://pagseguro.uol.com.br/)
 
-# Primeiros passos
+
+## Primeiros passos
 
 ### Atualize com seu Token do PagSeguro no config/initializers/pagseguro.rb
 
@@ -50,17 +52,17 @@ Os campos que podem ser usados são:
 
 Você adicionar ou remover de cada tipo de pagamento pelo valor **attributes**
 
-# Use o Heroku como servidor
+## Use o Heroku como servidor
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/candidosales/paydm)
 
-## Deploy de atualizações
+### Deploy de atualizações
 
 Após commitar no master faça:
 ```
 git push heroku
 ```
 
-# Roadmap
+## Roadmap
 - [x] Botão para deploy rápido do Heroku
 - [ ] Gerenciar, criar e editar tipos de pagamentos pelo administrador
 - [ ] Trocar API do PagSeguro pelo administrador
