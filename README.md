@@ -1,6 +1,10 @@
 paydm - Sistema de Pagamento DeMolay
 =====
 
+## Motivação
+O sistema de pagamento on-line foi ideliazado pelo Ir. Marcelo Victor Leal com o objetivo de facilitar o cumprimento de taxas através de um sistema web, proporcionando maior controle da tesouraria do GCE e dos Capítulos de nosso estado.
+Atualmente o sistema é desenvolvido e mantido pelo Ir. Cândido Sales onde qualquer capítulo do Brasil pode usar, gratuitamente, este software.
+
 **OBS:** Requer conta no PagSeguro
 [![PagSeguro](https://stc.pagseguro.uol.com.br/pagseguro/i/logos/logo_pagseguro200x41.1470259085855.png)](https://pagseguro.uol.com.br/)
 
@@ -52,8 +56,16 @@ Os campos que podem ser usados são:
 
 Você pode adicionar ou remover de cada tipo de pagamento pelo valor **attributes**
 
-## Use o Heroku como servidor
+## Instalação
+Paydm foi projetado para rodar em provedores na nuvem como Heroku, mas pode ser instalado em qualquer lugar. Para uma instalação rápida você pode configurar no Heroku clicando neste botão:
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/candidosales/paydm)
+
+Requisitos:
+
+* Ruby 2.2
+* Rails 4.2
+* Postgres
+* Um servidor como Unicorn ou Puma
 
 ### Deploy de atualizações
 
@@ -64,5 +76,24 @@ git push heroku
 
 ## Roadmap
 - [x] Botão para deploy rápido do Heroku
+- [ ] Desenvolver os testes
+- [ ] Atualizar para o Rails 5
 - [ ] Gerenciar, criar e editar tipos de pagamentos pelo administrador
 - [ ] Trocar API do PagSeguro pelo administrador
+
+## Contribua
+
+1. Faça fork do projeto ( https://github.com/candidosales/paydm )
+2. Crie o branch com sua feature (`git checkout -b my-new-feature`)
+3. Escreva testes para cobrir suas melhorias, e documente descrevendo o que sua feature é/faz
+4. Commit suas alterações (`git commit -am 'Add some feature'`)
+5. Push para o branch (`git push origin my-new-feature`)
+6. Crie um novo Pull Request
+
+## Autores
+* **Cândido Sales** - [twitter](https://twitter.com/candidosales) - [facebook](https://www.facebook.com/candidosales)
+* **Marcelo Leal** - [twitter](https://twitter.com/marceleal) - [facebook](https://www.facebook.com/marcelo.v.leal)
+
+## Licença
+
+Este projeto é open source sob a [Licença MIT](https://opensource.org/licenses/MIT).
