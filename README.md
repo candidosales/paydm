@@ -59,3 +59,8 @@ Após commitar no master faça:
 ```
 git push heroku
 ```
+
+# Roadmap
+- [x] Botão para deploy rápido do Heroku
+- [ ] Gerenciar, criar e editar tipos de pagamentos pelo administrador
+- [ ] Trocar API do PagSeguro pelo administrador
