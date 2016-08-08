@@ -298,4 +298,12 @@ Reinicie o servidor : reboot e em seguida cap production unicorn:restart
 Rootpaydm
 
 ### Deploy Heroku
+Antes de realizar deploy, faça:
+```
+rake assets:precompile
+```
+
+Após commitar no master faça:
+
+git push heroku
 
