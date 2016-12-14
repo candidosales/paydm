@@ -3,15 +3,17 @@ var Payment  = (function () {
 	var operation = null;
 	var operationDemolay = [
                     //  {type: 'inscricao_evento', price:40, attributes:['capitulo','grau_cavaleiro']}
-						{type: 'iniciacao', price:180, attributes:['data_iniciacao']},
-						{type: 'renovacao_cid', price:74, attributes:['capitulo']},
-						{type: 'renovacao_cid_senior', price:74, attributes:['capitulo']},
-						{type: 'renovacao_cid_vitalicio', price:810, attributes:['capitulo']},
+						{type: 'iniciacao', price:84, attributes:['data_iniciacao']},
+						{type: 'elevacao', price:84, attributes:['data_iniciacao']},
+						{type: 'renovacao_cid', price:84, attributes:['capitulo']},
+						{type: 'renovacao_cid_senior', price:84, attributes:['capitulo']},
+						{type: 'renovacao_cid_macom', price:84, attributes:['capitulo']},
+						{type: 'renovacao_cid_vitalicio', price:803.25, attributes:['capitulo']},
 						{type: 'formulario_conselho', price:74, attributes:['capitulo']},
-						{type: 'grau_cavaleiro', price:69, attributes:['data_investidura','convento']},
-						{type: 'regularizacao_cadastral', price:2, attributes:['data_nascimento','data_regularizacao']},
-						{type: 'requisicao_carta', price:35, attributes:['nome_organizacao_filiada']},
-						{type: 'segunda_via', price:15, attributes:['tipo_documento']},
+						{type: 'grau_cavaleiro', price:84, attributes:['data_investidura','convento']},
+						{type: 'regularizacao_cadastral', price:2.10, attributes:['data_nascimento','data_regularizacao']},
+						{type: 'requisicao_carta', price:36.75, attributes:['nome_organizacao_filiada']},
+						{type: 'segunda_via', price:15.75, attributes:['tipo_documento']},
 	];
 
 	var operationCapituloConvento = [
@@ -66,13 +68,13 @@ var Payment  = (function () {
 		operation.forEach(function(obj){
 			if($('#order_tipo').val()=='demolay'){
 				if(obj.type == value){
-					$('.price h4').html('R$ '+obj.price+',00');
+					$('.price h4').html('R$ '+obj.price.toFixed(2));
 					$('#order_price').val(obj.price)
 					return false;
 				}
 			}else{
 				if(obj.type == value){
-					$('.price h4').html('R$ '+priceCapituloConvento(obj.price)+',00');
+					$('.price h4').html('R$ '+priceCapituloConvento(obj.price.toFixed(2)));
 					$('#order_price').val(priceCapituloConvento(obj.price));
 					return false;
 				}

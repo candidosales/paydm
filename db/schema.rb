@@ -11,45 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908011044) do
+ActiveRecord::Schema.define(version: 20161214232417) do
 
-  create_table "orders", force: true do |t|
-    t.string   "tipo"
-    t.string   "operation"
-    t.string   "name"
-    t.string   "cpf"
-    t.string   "cid"
-    t.string   "address"
-    t.string   "email"
-    t.string   "protocolo"
-    t.integer  "qtd_membro"
-    t.decimal  "price",              precision: 10, scale: 0
+  create_table "orders", force: :cascade do |t|
+    t.string   "tipo",               limit: 255
+    t.string   "operation",          limit: 255
+    t.string   "name",               limit: 255
+    t.string   "cpf",                limit: 255
+    t.string   "cid",                limit: 255
+    t.string   "address",            limit: 255
+    t.string   "email",              limit: 255
+    t.string   "protocolo",          limit: 255
+    t.integer  "qtd_membro",         limit: 4
+    t.decimal  "price",                          precision: 8, scale: 2
     t.date     "data_iniciacao"
     t.date     "data_elevacao"
     t.date     "data_investidura"
     t.date     "data_nascimento"
     t.date     "data_regularizacao"
-    t.string   "capitulo"
-    t.string   "convento"
-    t.string   "nome_organizacao"
-    t.string   "tipo_documento"
-    t.integer  "status"
+    t.string   "capitulo",           limit: 255
+    t.string   "convento",           limit: 255
+    t.string   "nome_organizacao",   limit: 255
+    t.string   "tipo_documento",     limit: 255
+    t.integer  "status",             limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "grau_cavaleiro"
+    t.string   "grau_cavaleiro",     limit: 255
+    t.integer  "price_centavos",     limit: 4,                           default: 0,     null: false
+    t.string   "price_currency",     limit: 255,                         default: "BRL", null: false
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end

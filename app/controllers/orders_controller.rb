@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     payment.redirect_url = thanks_url
 
   
-    payment.items << {
+    payment.items << { 
       id: @order.id,
       description: @order.description,
       amount: @order.price,
